@@ -1,2 +1,11 @@
 # SoftwareEngineering
-The Complete Software Engineeting Courses in English
+The Complete Software Engineering Courses in English
+
+## THEORETICAL BASICS
+INTRO REQ ANA UML VOR OOD DDD
+
+## PRACTICAL BASICS
+TEST REFA BUI VER METR ARC EFF DEP
+
+## ADVANCED SWE
+CLEAN CICD AOP MICR FUNC LOG DSL
