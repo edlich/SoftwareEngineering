@@ -295,7 +295,8 @@ After a software product has been released for use, maintenance and care begins,
 
 In the software lifecycle, the phases can be broken down in different ways. Based on BALZERT [Bal98, p. 567], an initial rough phase classification is proposed below for the study module.
 
-![](RESSOURCES/01-Phases.png)
+![](RESSOURCES/01-Phases.jpg)
+
 Pic: Ordering of the phases according to Balzert
 
 **RESULTS**
