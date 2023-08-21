@@ -1,5 +1,5 @@
 # SoftwareEngineering
-The Complete Software Engineering Courses in English
+All Software Engineering Courses in English from Stefan Edlich
 
 ## THEORETICAL BASICS
 INTRO REQ ANA UML VOR OOD DDD
