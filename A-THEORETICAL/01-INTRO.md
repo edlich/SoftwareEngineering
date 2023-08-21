@@ -21,6 +21,7 @@ Topics of the learning unit are:
 > You will need approximately 60 minutes to work through the learning unit and approximately 80 minutes to complete the exercises.
 
 ---
+
 ## INTRODUCTION
 
 First, we want to define the term software technology in more detail.
@@ -46,6 +47,7 @@ Correspondingly, the IEEE defines software technology as:
 The term is also perhaps so difficult to understand because it encompasses many other fields (mathematics, production, manual labor, art, etc.). Perhaps this is precisely the appeal of being an artist or creator who can create something, bring it to life, and at the same time make it instantly accessible to millions of people.
 
 ---
+
 ## HISTORY
 
 The term software engineering emerged in the 1960s and was coined at the 1968 NATO-sponsored Software Engineering Conference in Garmisch-Patenkirchen, Germany.
@@ -56,20 +58,20 @@ Some more key data on the history of software engineering:
 | :------- | :------: |
 | 1950+ | First tools emerge, like "Macro Assembler". First compilers. |
 | 1960+ | Second generation of tools: optimizing compilers. First large-scale projects with more than 1000 developers are carried out. |
-| 1968 | ![](RESSOURCES/01-IluDijkstra.jpg) Dijkstra writes about the problems of the GOTO statement. |
+| 1968 | ![Dijkstra](RESSOURCES/01-IluDijkstra.jpg) Dijkstra writes about the problems of the GOTO statement. |
 | 1968 | The date standard YYMMDD is issued. |
 | 1970 | Waterfall model of Winston Royce. Unix created in the 70s. |
-| 1971 | ![](RESSOURCES/01-DavidParnas.jpg) David Parnas: Information Hiding |
+| 1971 | ![DavidParnas](RESSOURCES/01-DavidParnas.jpg) David Parnas: Information Hiding |
 | 1978 | Structured Analysis and System Spec (SA-Method) |
 | 1988 | Spiral-Model by Barry Boehm |
 | 1990 | Component-based development / OO development |
-| 1994 | ![](RESSOURCES/01-ErichGamma.jpg) Design Patterns von Erich Gamma |
+| 1994 | ![ErichGamma](RESSOURCES/01-ErichGamma.jpg) Design Patterns von Erich Gamma |
 | 1997 | UML (Unified Modeling Language) |
-| 1999 | ![](RESSOURCES/01-MartinFowler.jpg) Martin Fowler & Kent Beck "Refactoring" |
+| 1999 | ![MartinFowler](RESSOURCES/01-MartinFowler.jpg) Martin Fowler & Kent Beck "Refactoring" |
 | 2003 | Agile Modelle: Scrum and Kanban gain more popularity |
 | 2003 | Eric Evans und (Domain Driven Design) DDD |
 | 2004/05 | UML 2 |
-| 2008 | ![](RESSOURCES/01-UncleBobMartin.png) Clean Code Books and German Clean Code Movement ([Clean Code Developer](https://clean-code-developer.de/)) |
+| 2008 | ![UncleBobMartin](RESSOURCES/01-UncleBobMartin.png) Clean Code Books and German Clean Code Movement ([Clean Code Developer](https://clean-code-developer.de/)) |
 | 2010 | Outstanding book on „Continous Delivery“ by Jez Humble und David Farley |
 | 2015 | first research on software engineering in AI / Big Data Analytics |
 | 2017 | Alberto Brandolini und Event Storming. Followed by Team Topologies |
@@ -79,6 +81,7 @@ The most comprehensive history can be found here.
 > „The Technical and Social History of Software Engineering“, von Capers Jones, published by Addison-Wesley Professional, 2013
 
 ---
+
 ## Why Software Engineering? Small Errors - Great Disasters
 
 > Because the process of creating software is apparently quite difficult!
@@ -116,6 +119,7 @@ There are many more examples. Interested readers are referred to the following w
 * [CIO 10 Punkte des Scheiterns](https://www.xing-news.com/reader/news/articles/2605851)
 
 ---
+
 ## How much and what goes wrong in software projects?
 
 First, let's look at some results from studies that are still valid today and that underscore the need for software engineering.
@@ -170,6 +174,7 @@ The Standish Group study also provides insight into the causes of project failur
 Software engineering can deal with some of the points mentioned and propose solutions. In this Software Engineering study module, these points are also considered later. Software engineering cannot get you more support from management, but it clarifies the importance of management support and it provides good guidance on the topics: Requirements, Resource Management, Planning, IT Knowledge and Technology Knowledge.
 
 **Sources of errors**
+
 * 32% Errors in system logic
 * 19% Documentation errors
 * 18% Processing errors on the computer
@@ -266,6 +271,7 @@ A phase in the software lifecycle is a clearly defined period of time in which p
 Let's look at some of the "most important" phases in the software development process.
 
 ---
+
 ### Phases of the software development process
 
 The task of software development is to create a product that has the required quality properties. The development process is generally divided into a series of activities, the results of which are individual sub-products. Such activities are grouped into phases based on time, conceptual, technical and/or organizational criteria.
@@ -291,11 +297,12 @@ Ensuring the required software quality must be achieved through development-acco
 After a software product has been released for use, maintenance and care begins, i. H. It is important to eliminate all errors that occur after commissioning, to adapt the application system to changed conditions and to develop it further if new requirements arise. The type and scope of the maintenance activities also depend on the guarantee of quality assurance, i. H. poor product quality inevitably leads to more frequent errors.
 
 ---
+
 ### The classification of the phases
 
 In the software lifecycle, the phases can be broken down in different ways. Based on BALZERT [Bal98, p. 567], an initial rough phase classification is proposed below for the study module.
 
-![](RESSOURCES/01-Phases.jpg)
+![Phases](RESSOURCES/01-Phases.jpg)
 
 Pic: Ordering of the phases according to Balzert
 
@@ -316,6 +323,7 @@ As already mentioned, there are several perspectives on the cycles in the softwa
 The objectives, the required activities and the results for each phase are briefly presented below.
 
 ---
+
 ### Analysis Phase
 
 **Goals:**
@@ -338,6 +346,7 @@ The objectives, the required activities and the results for each phase are brief
 * Situation study, project calculation / project plan
 
 ---
+
 ### The Definition Phase
 
 **Goals:**
@@ -357,6 +366,7 @@ The objectives, the required activities and the results for each phase are brief
 * product definition / product requirements relate to the data, functions, behavior and user interface of the planned application system
 
 ---
+
 ### Design Phase
 
 **Goals:**
@@ -377,6 +387,7 @@ The objectives, the required activities and the results for each phase are brief
 * Design of the system components
 
 ---
+
 ### Implementation Phase
 
 **Goals:***
@@ -401,6 +412,7 @@ The objectives, the required activities and the results for each phase are brief
 * Generated data objects and data structures
 
 ---
+
 ### Acceptance and Introductory Phase
 
 **Goals:**
@@ -421,6 +433,7 @@ The objectives, the required activities and the results for each phase are brief
 * documentation
 
 ---
+
 ### Maintenance and Care 
 
 **Goals:**
@@ -439,11 +452,12 @@ The objectives, the required activities and the results for each phase are brief
 * Satisfied costumers
 
 ---
+
 ## Principles of Software Engineering
 
-![](RESSOURCES/01-FengShui.png)
+![FengShui](RESSOURCES/01-FengShui.png)
 
-Pic: Example Principles from Feng Shui 
+Pic: Example Principles from Feng Shui
 
 **SPEED OF INNOVATION VS. PRINCIPLES**
 
@@ -458,9 +472,10 @@ In this chapter, some selected principles are presented in order to create a bas
 In general, these principles apply to engineering, but are of particular importance for software development, as it is about developing complex and interacting systems. These can be better described, modeled, developed and tested the better one manages to abstract or structure things. This is something that many computer scientists find difficult - it is often too appealing to just develop things immediately.
 
 ---
+
 ## Principle of Abstraction
 
-![](RESSOURCES/01-Abstraction.gif)
+![Abstraction](RESSOURCES/01-Abstraction.gif)
 
 Pic: Abstraction
 
@@ -483,16 +498,17 @@ In the context of modeling, two forms of abstraction in particular are known.
 * Class-building abstraction
   
 The generalization of elements by omitting the distinguishing features is called class-building abstraction.
- 
+
 * Complex abstraction
 
 To abstract in a complex manner means to understand several elements as parts of a new whole and to summarize them under a common term.
 
-![](RESSOURCES/01-AbstractionB.gif)
+![Abstraction B](RESSOURCES/01-AbstractionB.gif)
 
 Pic: Two forms of abstraction
 
 ---
+
 ## The Principle of Structuring
 
 The principle of structuring is of great importance for both the software product and the development process.
@@ -505,7 +521,7 @@ The principle of structuring is of great importance for both the software produc
 
 The figure shows a simple PNP structure as an example. A transistor, a diode or an NPN are much more complex in real terms. However, the information can be reduced and structured.
 
-![](RESSOURCES/01-PnP.gif)
+![PnP](RESSOURCES/01-PnP.gif)
 
 Pic: Example PNP Transistor Structure
 
@@ -530,32 +546,32 @@ The application of the principle of structuring brings further advantages [Bal98
 **STRUCTURE**
 
 In the context of software development, tree and network structures are the most common forms of structuring. Tree structures are used to represent hierarchical relationships, such as the specification of processes, data and programs (examples: function hierarchy diagrams, data structure diagrams).
- 
 
 **TREE AND NETWORK STRUCTURES**
 
 Network structures can be used to represent functional processes, control flows and to represent relationships between data and functions or between data objects (examples are information flow or entity relationship diagrams).
- 
 
 **GROUPS / CLUSTERS**
 
 But the formation of groups / clusters is also an important element of software engineering, for example when functions or GUI elements are grouped. It turns out, therefore, that the structure of a system is, in general, the way in which the elements are put together, whereby elements with the same properties belong together or can otherwise be organized or grouped geometrically according to properties or abilities.
 
 ---
+
 ## Principle of Hierarchy
 
 The principle of hierarchization is a special case of structuring. The hierarchy designates a ranking, a superior and inferior order.
 
-![](RESSOURCES/01-Hierarchy.png)
+![Hierarchy](RESSOURCES/01-Hierarchy.png)
 
 **Pic:** Hierarchy
 
 A system has a hierarchy when its elements are **related / ranked** to one another in an order of **precedence**. Elements of the same rank are on the same rank and form one level of the hierarchy. Rankings can be determined based on the **meanings, properties or (temporal) relationships** of the elements of a system. The principle of hierarchization is an important principle for structuring software products and software development processes. The principle of hierarchization is based, for example, on **tree structures**.
 
 ---
+
 ## Principle of Modularization
 
-![](RESSOURCES/01-Modules.png)
+![Modules](RESSOURCES/01-Modules.png)
 
 **Pic**: Modularization
 
@@ -635,6 +651,7 @@ Software engineering can be divided into five categories: methods, tools, measur
 * The principle of standardization is required to unify both the development process and the product.
 
 ---
+
 ## Excercises
 
 1. Your friend asks you "what is software engineering?" Can you define that in a few sentences?
@@ -642,6 +659,6 @@ Software engineering can be divided into five categories: methods, tools, measur
 3. What is software quality for you? (a few sentences)
 4. What are the three biggest problems for you, why software projects go wrong. How would you address these? (>= 9 sentences)
 5. Could you now write / draw the phases of the software life cycle on the blackboard? Please memorize and test yourself by noting all phases here.
-5. What relation do you have to software engineering? Which areas are you particularly interested in? Do some research and send 2-3 links!
+6. What relation do you have to software engineering? Which areas are you particularly interested in? Do some research and send 2-3 links!
 
 Processing time: 30 minutes
