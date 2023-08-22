@@ -2,6 +2,8 @@
 
 (C) Prof. Dr. Stefan Edlich
 
+---
+
 **LEARNING GOALS**
 
 > This lesson is an introductory lesson. It also contains exercises, but is smaller in scope and less intense than the ones that follow. If you have never dealt with the topic of software engineering, you should work through this learning unit to get a feel for this subject.
