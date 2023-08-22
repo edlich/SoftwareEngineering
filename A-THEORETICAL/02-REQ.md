@@ -145,8 +145,237 @@ Here, according to RUPP, the following problems can be found in the requirements
 
 **6) Gold edge solutions (gold plating)**
 
-In XP parlance, “golden taps” are often used here. This means features that are mostly added by enthusiastic developers, but which are not really necessary and relevant.
+In XP parlance, **“golden taps”** are often used here. This means features that are mostly added by enthusiastic developers, but which are not really necessary and relevant.
 
 **7) Inaccurate planning and tracking of the project**
 
 Based on imprecise requirements, projects are planned too optimistically and then turn out to be too expensive and take too long to develop. So far, for example, performance has not been a requirement; but if this is the case towards the end of the project, it becomes apparent that – e.g. B. from the architecture - a completely different system should have been built.
+
+---
+
+## Sources for Requirements
+
+Where do requirements come from anyway?
+
+All stakeholders must be identified. Typically:
+
+* client
+* end user
+* Customer developer
+* project Manager
+* operator of the software
+* etc.
+
+**Roles**
+
+It is also important to know their roles. And perhaps hidden intentions!
+
+These must be questioned and, if necessary, relevant documents must be studied. Here, too, there are many models of information gathering:
+
+* interviews
+* Brainstorming / Design Thinking
+* observation
+* prototyping
+* competing products
+* etc.
+
+**ITERATIVE PROCESS**
+
+As in the procedural model, this is an iterative process with feedback loops, which must also identify risks and, if necessary, communicate them.
+
+**DOCUMENTATION**
+
+The documentation can then be done using good requirements tools that also map the history, since the acceptance tests should always take into account the last and historical requirements.
+
+---
+
+## Requirement Characteristics
+
+After reviewing the literature and some tools, it becomes apparent that requirements should ideally have all of these characteristics:
+
+* correctly
+* complete
+* clearly defined / delimited
+* clearly described
+* atomic
+* identifiable
+* uniformly documented
+* necessary
+* verifiable / testable
+* traceable backwards and forwards
+* consistent
+* classifiable (jur.)
+* validity / topicality
+* feasible
+* assessable / prioritisable
+* consistent
+* testable
+* customer oriented
+
+Especially when it comes to *"classifiable"*, RUPP points out that legally binding requirements must be able to be marked / grouped. Imagine if that didn't exist in the development of banking software...
+
+When considering which RE tool to use or even build yourself, you could very well consult the above  list of criteria.
+
+**Example**
+
+Here is another example of how this could be noted in the form of cards.
+
+![Cards](RESSOURCES/02-Card.png)
+
+**Pic**: Record criteria on cards
+
+**Requirement Attributes**
+
+Here is an extreme importent list of attributes that can be relevant for requirements:
+
+* id
+* date
+* author
+* short description
+* long description
+* status
+* reference to the use case
+* reference to other documents
+* who accepts the requirement?
+* what is the acceptance criterion?
+* priority
+* conflicts
+* dependencies
+* legal relevance
+* other remarks
+* history
+* category
+
+> 
+
+**Excercise**
+
+* Think about which attributes you consider important for your requirements and record them accordingly.
+
+* Are any missing here? Please tell the lecturer if this list is missing items! 🙏
+
+* Do you know of systems that may record other attributes?
+
+---
+
+## Linguistic Blur
+
+Here's an illustrative example from O'Reilly's Head First Software Development:
+
+![Card](RESSOURCES/02-Karte.png)
+
+**Pic**:
+
+> Tom Says: „The customer should be able to search for trails“
+
+* The customer should see a map of the world and then enter an address to search for trails near a particular location.
+* The customer should be able to scroll through a list of tourist spots and find trails that lead to and from those spots
+* The customer should be able to enter a ZIP code and a level of difficulty and find all trails that match that difficulty and are near that ZIP
+
+Do you recognize the problem?
+
+**AS CLEAR AS POSSIBLE**
+
+Language is often so infinitely fuzzy. The aim must therefore be to define the requirements as clearly as possible according to the previous list of criteria.
+
+---
+
+## Degree of Commitment
+
+**DIFFERENT LEVELS OF LIABILITY**
+
+As can be seen from the requirements of a chess program, there are different levels of commitment. These should also be precisely defined linguistically. The stakeholder should know that using a term that is too weak may result in the feature not being implemented. However, under certain circumstances, too strong a term can also lead to the system becoming much more expensive than planned.
+
+**GRADINGS**
+
+The following classifications of the degree of liability can therefore be found in the literature:
+
+> must (obligation)
+
+This requirement is mandatory. Should / shall is also often used, but this is not so good. The word *"shall"* has a vague component in it and is not as mandatory as it should be in a requirements document. In English, *“shall”* is used in requirements documents. The English *"must"* is even harder, but contradicts English politeness.
+
+> should / shall (wish)
+
+The requirement is not maximally mandatory, but very strongly desired. With this category of requirements in particular, the realization usually comes later that it cannot be financed. For example, the system should be high-performance or be able to process 1000 requests per second if possible.
+
+> will (intention)
+
+One intends to implement a *“will”* requirement. It is likely that this will be achieved, but not 100% certain.
+
+> can (suggestion)
+
+A requirement can be implemented, but does not have to be.
+
+The requirements "will" and "can" are used a little less frequently. Of course, a wish and a suggestion are somehow similar and often even synonymous. So make sure that your documents and everyone involved knows which wording has which effects.
+
+Project managers therefore often define the following structure.
+
+![Liability](RESSOURCES/02-Words.jpg)
+
+**Pic**: Hierarchical structure of liability
+
+This structure is even supported, specified or checked by some programs.
+
+> **NOTICE**: What's interesting is that this has been supported by an RFC "standard" since 1997!
+
+> Please read about it in RFC 2119 <https://www.ietf.org/rfc/rfc2119.txt> ❗
+
+---
+
+## Priorization
+
+Wichtig und schwierig ist das Priorisieren von Aufgaben. Die meisten Programme geben hier schon ein Schema vor.
+
+Erfahrungsgemäß sind drei bis fünf Stufen völlig ausreichend, um zu priorisieren. Also *„sehr hoch“*, *„hoch“*, *„mittel“*, *„gering“*, *„null“*. Diese sollten dann nummeriert oder mit Ziffern versehen (4 bis 0 oder A bis D) und auf jeden Fall farblich unterlegt werden.
+
+Ähnlich der ABC-Analyse ist es hier interessant, sich alle Anforderungen auch noch einmal unter dem Gesichtspunkt des Eisenhower-Schemas anzusehen.
+
+![Eisenhauer](RESSOURCES/02-Eisenhauer.gif)
+
+**Pic**: Eisenhower Matrix / Scheme
+
+The Y-axis is importance and the X-axis is urgency.
+
+**SCHEME FOR EXECUTIVES**
+
+Although the scheme is particularly suitable for managers who can delegate, it is always worth checking out requirements and specific tasks or user stories.
+
+---
+
+## Examples and Formalities
+
+> Formal requirements for a chess program: ♕
+
+1. All best practices should be applied during development.
+
+2. The chess program must be arena compatible.
+
+3. Programming languages:
+
+4. The core must be fast: ⇒ Julia, Nim, C++
+
+5. The wrapper code should be fit for SE tools ⇒ Python
+
+6. The chess program should have a three-level opening library:
+* Perfect DB based on FEN + N*[Move weighted with %]
+* PrivateDB based on ECO
+* Use bigbook.txt
+
+7. The chess program must have a kernel based on fast bitboards.
+
+**TYPE OF PRESENTATION**
+
+In the example, a linguistic representation was selected. However, it is up to you to weigh up when a verbal description and when a graphic representation - for example using use cases - is suitable.
+
+**POSSIBILITIES FOR OPTIMIZATION**
+
+The requirements mentioned in the example are not yet perfect:
+
+* Normally, the first version should not contain any technical details.
+* In the first version, they should always be written from the point of view of the user.
+
+---
+
+## Atlantic Systems Guild
+
+
