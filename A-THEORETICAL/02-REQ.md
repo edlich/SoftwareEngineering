@@ -1,4 +1,4 @@
-# INTRODUCTION TO SOFTWARE ENGINEERING
+# REQUIREMENTS ENGINEERING
 
 (C) Prof. Dr. Stefan Edlich
 
@@ -378,4 +378,146 @@ The requirements mentioned in the example are not yet perfect:
 
 ## Atlantic Systems Guild
 
+**STRUCTURING REQUIREMENTS**
 
+As we just saw, there are intrinsic requirements as well as end-user requirements. You should therefore think carefully about which category of requirements you record.
+
+Probably the best-known structuring of requirements comes from the "Gang of Six", the Atlantic Systems Guild <http://systemsguild.eu>. This group of authors developed THE template for requirements.
+
+> Websource: Please find the original here: <https://volere.org>
+
+One of the exercises at the end of this lesson will be exploring this template.
+
+**REQUIREMENTS**
+
+We list these requirements again from the reference above:
+
+**FUNCTIONAL REQUIREMENTS:**
+
+* the Scope of the Work
+* the Scope of the Product
+* functional and data requirements
+
+**NON FUNCTIONAL REQUIREMENTS:**
+
+* look&Feel
+* usability and humanity
+* performance
+* operational
+* maintainability and support
+* security
+* cultural and Political
+* legal
+
+Project drivers, project constraints and project issues are also listed, some of which also fall into the analysis, design or project management and are dealt with there.
+
+**HOW ARE TEMPLATES HANDLED?**
+
+The requirements mentioned can be used as a kind of additional checklist to search for requirements. Most of the requirements are certainly functional and describe the product, because that is certainly the first thing you think of when analyzing the requirements. The non-functional requirements are often forgotten. It can therefore do no harm to develop specific requirements for the non-functional requirements and to note them in the system.
+
+**TOOLS**
+
+The market for tools for requirements engineering is very divided. In practice you will find that there are roughly three groups:
+
+1. too simple tools (Word or Excel document),
+2. unsuitable tools (e.g. use case-heavy tools)
+3. complex, very large tools (InStep by MicroTool or the *"ancient"* RUP tools) that are more suitable for large projects.
+
+Therefore, every requirements engineer usually has to evaluate all tools himself until he finds a suitable one or even programs one himself. However, it is worth investing this time.
+
+---
+
+## IEEE 830-1993
+
+In addition to the Atlantic Systems Guild, the IEEE 830-1993 is also an important document for requirements analysis.
+
+> **WEBSOURCE:** The specification is actually paid, but can be viewed here: <https://personal.utdallas.edu/~chung/RE/IEEE830-1993.pdf>
+
+We are talking here about an SRS (*“Software Requirement Specification”*), the document of which has the following structure:
+
+* purpose
+* introduction
+* scope
+* explanations of terms and/or abbreviations
+* references to other resources or sources
+* overview
+* general description
+* product perspective
+* product features
+* user Features
+* restrictions
+* assumptions and dependencies
+* sharing of requirements
+* specific Requirements
+* functional requirements
+* nonfunctional requirements
+* external interfaces
+* design constraints
+* performance requirements
+* quality requirements
+* other requirements
+
+you can already see here that an attempt should be made to document many requirements early in the requirements phase, which otherwise might not have arisen until the analysis and design phase.
+
+---
+
+## What else to consider?!
+
+In addition to the notes on creating requirements already mentioned, you should also note a few other things.
+
+* Think about how you document the requirements. Which tool or which type of document. This is important.
+* How many stakeholders are there? Are these available and can they communicate?
+* Even the size of the budget has a major impact on the requirements and the determination of requirements.
+* When determining the requests, always try to sense whether there are implicit requirements/facts.
+* Some requirements are sometimes not even known to the stakeholders. So try to **"see clairvoyantly"** unconscious desires.
+
+**CREATIVITY TECHNIQUES**
+
+Of course, you also need to know the range of creativity techniques in order to best meet the requirements. Of course, this also applies if you just want to get to know the existing system or want to find out more in the analysis/design phase:
+
+* brainstorming
+* mind mapping
+* consult
+* observe
+* write down
+* interview
+* video / audio recordings
+
+---
+
+## Summary
+
+This lesson introduced:
+
+* Requirements engineering overlaps with the general analysis activity in the software life cycle.
+* An RE concept - i.e. the correct, complete and high-quality collection and administration of requirement characteristics - should be integrated into the entire project.
+* Requirements have a direct and strong influence on the design and architecture of the system.
+* Requirements serve to fix clear objectives in the early phase and to make ideas more concrete.
+* Seven essential main problems that play a role in the analysis of the future system can be described.
+* The degree of commitment can be broken down into four levels. Duty, desire, intention and suggestion.
+* Three to five levels are completely sufficient for prioritization.
+* In the first version, requirements should always be written from the user's point of view and should not yet contain any technical details.
+
+---
+
+## Exercises
+
+**A)** Choose a small **development- / start-up project** /  for the entire software engineering module and use this project for all learning units, for example the already mentioned RE tool or another tool that helps with software engineering or a tool that you always wanted to build (let's call it it "Project A"). During the course of the module you will apply all topics such as testing, refactoring or even requirements engineering.
+
+The task of this learning unit is to determine the requirements for your project and manage them.
+
+Processing time approx. 120 min.
+
+**B)** Describe your project or any project (e.g. one related to your work or a private project) properly using the methods of requirements engineering by mapping some requirements in **2 tools!**.
+
+To do this, use the most important description **attributes** from the script!
+
+Approx. 5-10 requirements per tool *should* be sufficient.
+
+**2 variants** should be handed over = tools. A 'self-made' variant and a professional = possibly commercial variant, i.e. with **2 tools!**
+
+Examples of 'self-made' variants: Airtable, notion.so, Trello, etc.
+
+Examples of commercial tools: Monday, Jira, Doors, ObjectIF, Xebrio, etc.
+
+Instead of the professional version, you can also build a tool yourself (i.e. MS Access).
