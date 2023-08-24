@@ -38,10 +38,9 @@ You need at least 4-5 hours to set up and apply your own analysis.
 
 ## The Complete Stages of the Analysis
 
-
 This lesson is not strictly about all points of analysis. In addition to the classic tasks of analysis, there are other important points that should be considered during the analysis, generally in the early phases. This also includes considerations regarding the process model, project management or project calculation. Nvertheless this is a comprehensive list:
 
-![Analyze Phase](RESSOURCES/03-Graete.gif)
+![Analyze Phase](RESSOURCES/03-Graete.jpg)
 
 **Pic**: Elements of the Analysis Phase
 
@@ -560,3 +559,98 @@ S
 
 ## Business / Domain Classes
 
+Already in the analysis phase one should know which essential business classes exist. These are usually also called business classes (or domain classes). Here you can already work out associations and multiplicities and recognize the first connections or problems.
+
+Of course, a detailed class diagram of all components belongs in the design phase - but then usually with all fields and methods. In the analysis phase, however, a rough overview (without fields and methods) is usually very useful.
+
+Usually these are Domain- / Businessclasses like: **person, address, account, product, customer**, etc.
+
+In the chess programming example, the most important base classes are:
+
+* UciHandler - Communicates with the user
+* MoveGenerator - Generates the trains
+* OpeningManager - Manages the opening books
+* GameInfo – information about the current game
+* Board - The board representation
+* Engine - the logic that can play
+
+Real business classes in this example are only *GameInfo* and *Board*, all other classes are usually only taken care of after the analysis phase.
+
+---
+
+## System Interfaces
+
+System interfaces often have to be identified for each use case.
+
+In small projects, these are usually not immediately recognizable. In larger projects, however, it quickly becomes clear that, from a technical point of view, a project cannot be viewed in isolation. The system interacts with other IT systems or with the real world.
+
+> EXAMPLE: Consider the [“Toll-Collect”](https://www.toll-collect.de/) example. There are satellites, motorway bridges with transmitters, terminals at rest stops, the normal postal service and much more.
+
+![](RESSOURCES/03-TollCollect.gif)
+
+All these interfaces must be taken into account. It is often with such interfaces that the most problems arise.
+
+Examples of **system interfaces** are:
+
+* Dialog interfaces (good / bad GUIs?!)
+* Output artifacts (letters, reports, etc.)
+* Data interfaces (legacy systems, web services, REST, etc.)
+* or purely functional interfaces to external systems
+
+---
+
+## Exploratory interface prototype / GUI
+
+**OUTLINE DRAFT**
+
+A first **rough draft** of the graphical user interfaces, the GUIs (Graphical User Interface), should already be available in the analysis phase, which is best sketched out on the whiteboard with colleagues or the stakeholders.
+
+However, a detailed GUI can only be created in the design phase.
+
+**FEEDBACK**
+
+With agile models in particular, it is important that the results of the user analysis are included at an early stage – possibly even through the **prototype**.
+
+**Early feedback** helps avoid design errors that can become expensive later!
+
+At this point the analysis would end. In larger projects, you should definitely work through all the steps mentioned in this learning unit.
+
+What now follows is the design phase. There it is also about UML, but in particular its application and modeling and architecture knowledge.
+
+---
+
+## Summary
+
+This lesson introduced:
+
+* The stages and tasks listed in the analysis are divided into an actual analysis and a target concept.
+* What describes the future product in the early phases or analysis phases is summarized under the generic term product definition.
+* In addition to considering the company's goals, a market analysis is important.
+* The lack of communication between those involved can lead to the failure of the project.
+* Vision sketches serve to motivate and inspire.
+* Preliminary studies depict the analysis process to a lesser extent.
+* The detailed concept should be suitable for checking the service provided.
+* The specification is defined in DIN 69905, like the specification.
+* The feasibility is checked by means of a feasibility study and risk analysis.
+* Quality assurance covers several levels and the procedures used are part of quality management.
+* Prototypes show that the technology is mastered and that it is appropriate and mature enough.
+* The business process analysis includes numerous other analyzes whose results can influence the project.
+* A glossary serves to make a general technical language known and to establish it between the participants.
+* Use cases cover functional requirements, the others also cover the functional requirements.
+* The most important business use cases are referred to as business use cases.
+* The essential business classes are usually also called business classes (or domain classes).
+* Design errors can be avoided through user analysis using prototypes and GUI drafts.
+
+---
+
+## Excercises
+
+1. From all points of the learning unit "ANA - Analysis" think about your own **checklist / cheat sheet** (on an extra DIN A4 page) with the points that you consider relevant for your project.
+
+2. Conduct an analysis on your semester project / your favorite project.
+
+Even better: You have a **start-up idea** and would like to submit this analysis as part of a large documentary!
+
+Write enough for each item to make up at least 2 pages.
+
+Expect to have a fishing rod for the start-up chapter soon. If successful, you would get a lot of "money" to do the design later and be allowed to implement it. So get your start-up off to a successful start!
