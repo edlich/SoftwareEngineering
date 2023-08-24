@@ -91,3 +91,392 @@ The corporate goals are clearly defined by the questions, what does the company 
 
 ## Doimain Knowledge
 
+**COMMUNICATION DIFFICULTIES**
+
+Some projects fail because the contractors or the consultants (consultants) do not speak the *'same language'* as the client or the client company! People do not understand each other and this means that there is no communication among and with each other, which can ultimately lead to the project failing!
+
+What can you do about it?
+
+* read literature
+* to hold an interview
+* try to understand and speak the language of customers or their stakeholders
+* make an internship
+* sit next to it and watchIlu
+* apply requirements engineering methods
+
+![Read a Book](RESSOURCES/03-readbook.jpg)
+
+Take this serious. Clients really don't likt it if you are not kn their knowledge level!
+
+---
+
+## Idea for a new System and Vision!
+
+Nothing is more important than **inspiring** all project employees and presenting the idea in a short vision sketch. This should be possible in a **few sentences**!
+
+Analogous to the well-known statement by *ANTOINE DE SAINT-EXUPÉRY*:
+
+> "If you want to build a ship, don't drum up men together to procure wood, prepare tools, assign tasks and divide up the work, but teach the men to long for the wide, endless sea!"
+
+This also includes a concise, intuitive and short **project name**. For example, the address of the website “www.where-to-go-today.net” (which, by the way, was created by one of your online student colleagues) immediately shows what it is about. Or not?
+
+Try to imagine what you would have built on this website!
+
+Many projects do without a short, concise name. Good project names are important self-runners that quickly settle in the minds of many people.
+
+> **Bosporus** A project that combines two fields such as graphics and robotics could e.g. B. simply called Bosporus (or Bosphorus). This project really existed and it was known throughout the university within a month.
+
+---
+
+## Preliminary study and market analysis
+
+The preliminary study depicts the entire analysis process beforehand **"on a small" scale**!
+
+* set **general goals**. The general objective and the boundary conditions to be observed are defined together with the client.
+
+Result documents: Minutes of conversations, etc.
+
+* sources of **information**. Documents are viewed and existing ideas on the problem are incorporated. How is the problem currently being dealt with?
+
+Outcome documents: List of existing sources of information and contact persons.
+
+* **Current State**. The current situation is roughly surveyed using catalogs of questions and interviews.
+
+The general functional and non-functional requirements and objectives of those affected and involved are determined in discussions with the specialist departments.
+
+* **delimit the problem area**. What is no longer part of the task? Where are interfaces to the outside world?
+
+Outcome document: task description, context diagram.
+
+* **identify actors**. Who does what, i. H. which users have which tasks and competencies in the context of the problem area.
+
+Outcome documents: actor diagram, if necessary competence scheme, authorization concept
+describe environment. 
+
+* What does the **environment** look like in which the system to be developed is to run?
+
+Outcome Document: An infrastructure model that describes the hardware, software, network and middleware technology and architecture.
+
+* Identify **high-level system use cases**. What are the system use cases called that the system should support? A list of the cases by name already provides an initial orientation on the requirements. If necessary, each system application is briefly explained with a sentence or a few keywords.
+
+Result: system use case overview.
+
+* **Priorities**. Focal points are defined and priorities are assigned. Which problems need to be solved most urgently, which ones have a little more time?
+Outcome document: framework concept.
+
+* **alternative solutions**. Possible solutions are developed and compared: Which alternatives are conceivable? In the case of very urgent problems, the question of possible immediate measures arises.
+
+Resulting document: Presentation of the solution alternatives.
+
+* **Recommendation**. The alternative solutions are evaluated (according to previously defined criteria) and economic feasibility studies are carried out if necessary.
+
+Outcome document: recommendation.
+
+* **Further action**. Finally, the further procedure for the alternative recommended or desired by the client is planned.
+
+Outcome document: Recommendations for further action.
+
+---
+
+## Grob- und Feinkonzept (Basic and fine concept)
+
+In industry, one often speaks of the two concept phases, rough concept and detailed concept (especially in Germany).
+
+**BASIC CONCEPT**
+
+The rough concept is used in particular when no agile model is used. In the rough concept of the analysis phase, there are strong overlaps with what would otherwise be done in the specifications or in the preliminary study. Here, too, all requirements should be formulated in a project application and the goals should be recorded.
+
+
+**FINE CONCEPT**
+
+The fine concept is the detailed and fully documented analysis. In most cases, this description must be so detailed that it can be used to check the service provided. It must therefore also be realizable. For this reason, at least the following points are fully included:
+
+* user interface
+* object model
+* interface systems
+
+---
+
+## Lastenheft und Pflichtenheft ('Load'-Booklet and Duty Booklet)
+
+![Load](RESSOURCES/03-Load.png)
+
+If the problem analysis is already geared towards defining the essential requirements for the software product to be developed, then a specification sheet can also be used as a result form for the investigations. The specification contains a summary of all basic technical requirements that the software product to be developed must meet from the customer's point of view. The specifications then contain exactly all the requirements to be implemented.
+
+> **NOTICE**: The load specification comes before the functional specification. As a memory aid, it is helpful to orientate yourself on the alphabetical order in German (L before P). Or you realize that you first have the burden of formulating what needs to be done and then the obligation / duty to implement it.
+
+**Lastenheft / Load-Booklet**
+
+The specification is specified in **DIN 69901-1** to **DIN 69901-5** and should be formulated by the client. In practice, however, it is usually created together with the contractor. The costs for the creation are therefore often passed on to the contractor.
+
+The specification forms the basis for the offer for the project and thus includes the first specification of the product to be created (the "load"). It also contains the first requirements for the product when it is later used (e.g. 1000 hits per second) as well as framework conditions for the product and service provision (hardware, infrastructure, etc.).
+
+Furthermore, the contractual conditions such as e.g. B. the provision of partial services, warranty requirements, risk management, etc. are recorded. The requirements for the contractor (e.g. certifications) and for the contractor's project management (e.g. project documentation, controlling methods) are also formulated in the specifications.
+
+The most common classification is:
+
+* **Defining objectives**: This describes the objectives to be achieved through the use of the product.
+* **Product use**: It is determined for which application areas and for which target groups the product is intended.
+* **Product functions**: The main functions of the product are described from the customer's point of view. It is important to ensure that the core functions and not secondary functions are described. Detailed descriptions should be avoided. Each function requirement is to be marked by a preceding number with a preceding LF (specification sheet function), enclosed in slashes (e.g. /LF 10/) in order to be able to clearly reference it.[1]
+* **Product data**: The main data of the product, which must be saved permanently, are specified (/LDnn/).
+* **Product performance**: If there are performance requirements with regard to time, data volume or accuracy for individual main functions and data, then they are listed here and marked with /LLnn/.
+* **Quality requirements**: The most important quality requirements should be listed here, such as: B. good reliability, good usability, normal efficiency, etc.
+* **Supplements**: Supplements or special requirements are described here, e.g. exceptional user interface requirements.
+
+> **Specification book**: The specification is a contractually binding and precise description of the IT system to be developed.
+
+The requirements for the specification are - like those of the specification - specified in **DIN 69901-1 to 69901-5**. The standard contains detailed descriptions of all possible solutions and, as a rule, the specifications.
+
+Structure of a specification according to Balzert: 
+
+1. Goal setting
+
+* boundary criteria
+* desired criteria
+* demarcation criteria
+
+2. Product Use
+
+* areas of application
+* target groups
+
+3. Product Configuration of Software, Hardware, Orgware
+
+4. Product environment: interfaces, operating conditions
+
+5. Product Features
+
+* function 1
+* function 2 etc.
+
+6. Product Performance
+
+7. User Interface
+
+8. Quality Target Determination
+
+9. Global Test Cases
+
+* test case 1
+* test case 2 etc.
+
+10. Development Configuration of Software, Hardware, Orgware
+
+11. Supplements
+
+---
+
+## Feasibility study and risk analysis
+
+At the beginning of a project you should at least answer the following questions:
+
+* Is the budget sufficient?
+* Is the system technically feasible?
+* Can the boundary conditions be met?
+* Will the project be an economic success?
+* Can we identify and set the criteria for success?
+* Is it possible to determine measurable proof criteria for their occurrence?
+* Can the project risks be determined and evaluated?
+* What are the project risks?
+* Can we estimate the probability of occurrence and the extent of the damage?
+
+**RISK ANALYSIS**
+
+As an answer to the last question, measures to reduce the probability of occurrence and to minimize damage should be determined. In addition, the risk should be evaluated according to the probability of occurrence and the extent of the damage, and all project risks should be collected in a list.
+
+---
+
+## Quality assurance concept
+
+Quality is a very broad area. As a project manager, you should be aware of all levels at which quality procedures need to be applied.
+
+* Product **reviews** and code reviews must be defined. For example: At Google, every piece of code has to pass 5-6 reviews before it goes into production.
+* **Development guidelines**. For example, style guides, tools, procedures, wikis, etc.
+* **Test concepts**: At which test levels must testing be carried out? (See lesson "TST - Object-Oriented Testing and Test-Driven Development")
+* **Test plans**: Are tests sufficiently documented?
+* **Check work orders**: How is work noted, distributed and reviewed? The process model and the process guide specify a lot here.
+* **Review milestones**. Who monitors the milestones? Are there customer acceptances for milestones or "user stories" like in Scrum?
+
+**QUALITY MANAGEMENT**
+
+The processes mentioned are part of a complete quality management system and are carried out and controlled in large projects by individuals or by a group of people (quality officers).
+
+Usually, one tries to measure the quality automatically and to integrate it into the build cycle from the outset. This may include the tools and levels below:
+
+* stylechecker and sugfinder
+* unit tests
+* architectural metrics (dependency graphs, cycles, rACD, etc.)
+Experience shows that projects that do this initially run much better. The code quality is better and the later growing system is better controlled.
+
+---
+
+## Technical Prototype / Spike
+
+It makes sense to create a technical prototype in the early phase.
+
+This is also referred to as a **technical puncture / prototype** - called a **"spike"** in English. Furthermore, it can also be combined with a general prototype if the budget is low or if there is a lack of time.
+
+Most of the time, however, this prototype is there to show if certain technologies work. A technical prototype is also usually well suited for non-functional requirements:
+
+> EXAMPLE: For example, it can be shown that a SOAP or REST client is or miht not performant with 1000 requests per second - bat that an RMI client is.
+
+**MEANING OF THE PROTOTYPE**
+
+On the one hand, the purpose of this prototype is to quickly prove or disprove that the **technology is mastered**, appropriate and mature enough. On the other hand, there is the benefit of receiving quick feedback – be it in the form of experience from the technology or in the form of feedback from the customer.
+
+> ANNOTATION: It should be noted here that in some process models the spike is the first version of the software. This means that you try to map the simplest functionality right away and in the environment that will also be available at the end. Typical here are simple prototypes, e.g. B. in Ruby on Rails, which provide simple frameworks (scaffolds).
+
+---
+
+## Business process analysis and system analysis
+
+![Systemanalyse](RESSOURCES/03-Systemanalyse.jpg)
+
+The business process analysis usually includes roughly:
+
+* requirements engineering methods
+* study documents
+* obtain or set up organizational charts
+* data analysis
+* process, procedure, flow analysis
+* user analysis
+
+**DETAILED ANALYSIS**
+
+In many cases, an existing system / company or production structure needs to be analyzed. Therefore, the following parts can be examined and documented in more detail:
+
+1. Organizational Structure
+
+* organizational structure
+* description of the organizational unit / business areas
+
+2. Results of the business process survey
+
+* logistics
+* procurement / Purchasing
+* production
+* camp
+* quality assurance
+
+3. Results of document collection
+
+4. Analysis of the existing application system (PPS system)
+
+* menu structure
+* application functionality
+* data structures
+* bottlenecks of the available application system
+
+5. Proposal for the structure of the future application system (rough overview)
+
+
+It's not always about the manufacturing industry, but surely also modern companies in the Web age. In this case there is no manufacturing and the product or service in question must be examined accordingly.
+
+---
+
+## Procedurse and Process Model
+
+It is usually up to the project manager to make initial decisions: to use their own process model or to suitably adapt an existing process model.
+
+Well-known process models in this context are:
+
+* Waterfall Model
+* Spiral model
+* V model (in Germany)
+* RUP / Rational Unified Process (old)
+* XP / Crystal Clear
+* **Scrum**
+* **Kanban**
+The last mentioned are the most up-to-date and therefore the most relevant models today.
+
+The following things should influence your choice:
+
+* size and type of project
+* company culture and readiness
+* Knowledge and willingness of all parties involved
+
+Ask companies which models have had good experiences with what kind of models!
+
+---
+
+## Project Management and Project Calculation
+
+The topics of project management and project calculation are dealt with in the corresponding online course. However, due to their importance, here are a few brief points.
+
+**DEFINITION: Project Management**
+
+According to DIN standard 69901, project management means:
+
+> "Project management is the totality of management tasks, organization, techniques and resources for the execution of a project".
+
+As a project manager you must:
+
+* Communicate and monitor the project specifications and goals
+* Determine the structure of the project
+* Monitor and define the project phases
+* Conduct risk management
+* Delegate responsibility and check partial results
+* Manage deadlines and costs (see below)
+* Carry out or set up quality management
+* Manage staff (illness, layoffs?!)
+* Carry out communication management (one of the most time-consuming and important points in project management!)
+* When dealing with stakeholders, you need to keep the magic triangle in mind.
+
+When dealing with stakeholders, you need to keep the magic triangle in mind. It is therefore necessary to constantly decide which of these adjusting screws can be turned:
+
+![Magical Triangle](RESSOURCES/03-Dreieck.jpg)
+
+**Pic**: Magical Triangle
+
+> **Project Calculation** According to DIN 69905, the project calculation is the "determination of the probable cost-effective project services and their evaluation".
+
+**PROJECT MANAGEMENT**
+
+As a project manager you must:
+
+* initially estimate the project effort
+* calculate the actual effort in the project
+* determine the deviation between target and actual and derive measures from it
+
+The following procedures are decisive for the project calculation:
+
+* **Expert estimation**: The most popular method. Experts may have done many similar projects and have great experience.
+* **Delphi method**: Is the weighting of expert estimates
+* **Function point procedure**: A function point is either an input, an output, a request, an interface or a data set. All of this is determined, weighted and converted into money or man-months.
+* **COCOMO (I+II)**: stands for "Constructive Cost Model" and calculates a KDSI. This stands for "Kilo Lines of Devlivered Source Instructions", i.e. for 1000 lines of instructions in the source code. Similar to McCabe Cyclomatic Complexity, things like loops, branches or assignments are meant here. 
+
+In COCOMO II, further concepts are then taken into account such as
+
+- code reuse
+- composition of programs
+- Automatically generated program code
+- Object-oriented approaches
+
+---
+
+## Stakeholders and their interests
+
+![Group](RESSOURCES/03-Group.png)
+
+**SHAREHOLDERS**
+
+Stakeholders are shareholders for whom something is at stake. 'Stake' is the commitment and 'stakeholders' are those entitled or their advocates.
+
+It is therefore always important at the beginning of a project to find all these people, to document this and to classify them correctly. In practice, it is often problematic that important bosses (who can redirect the project from time to time) are often not reached.
+
+So important questions are:
+
+* Who can contribute to the requirements?
+Who are the contacts?
+* Who are the end customers?
+* Who are the departments?
+* What interests do the stakeholders have?
+* Are there political interests?
+* Are there selfish interests?
+* What perspectives do the specialist departments have?
+* What problems or wishes do the stakeholders have?
+
+---
+
+## Glossary
+
