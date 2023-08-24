@@ -480,3 +480,83 @@ Who are the contacts?
 
 ## Glossary
 
+A globally accessible glossary serves both to explain the terms of all documents and to make known a general technical language and to establish it between the parties involved.
+
+Unfortunately, consultants, project managers and company employees often use different vocabulary in practice.
+
+> EXAMPLE: For example, bankers speak of "roller coster swaps", biologists of "hydrogenase", etc.
+
+A glossary should:
+
+* be easily accessible
+* be editable (e.g. as a wiki)
+* be filled initially (increases acceptance)
+
+Here is an example of glossary entries, again for a chess program:
+
+* pondering mode - analysis mode - (descriptions, occurrences, link, ...)
+* UCI - Universal Chess Interface - (Descriptions, Occurrence, Link, ...)
+* transposition table - table for transpositions - (descriptions, occurrences, link, ...)
+
+(Remark for Germany: In this example, all glossary entries happen to be English words, which of course doesn't have to be the case, but often happens.)
+
+A typical example is when German technical terms are translated into English so that the code is purely English...
+
+What can happen then is that remote teams start back-translating English terms so that the confusion is complete. The glossary can be an important help here if you leave technical terms in the code in the original language and translate the glossary here uniformly.
+
+It is also helpful if further references, descriptions or web links to a glossary are given.
+
+---
+
+## Requirements and Use-Cases
+
+At an early stage of the analysis, the following must also be noted:
+
+* What are the requirements?
+* What use cases are there?
+
+The details of both points and their overlaps / differences have already been discussed in the learning unit "REQ - Requirements Engineering".
+
+The use cases mostly cover the **functional requirements**. They answer the question: what does the system do?
+
+The other requirements often also cove* r the **non-functional requirements**, such as:
+
+* usability / usability requirements
+* performance requirements (efficiency)
+* reliability requirements and
+* supportability requirements such as: changeability, maintainability, manageability
+
+---
+
+## Use Cases and Processes
+
+**CREATION OF SIMPLE BUSINESS PROCESSES**
+
+After the preparation, the creation of the first simple business processes can now begin. For the sake of simplicity, these can also be noted as use cases at the beginning. This means that all actors are taken into account. More precise activity diagrams can then be created for each business process.
+
+Mind you, we're not in the UML design phase here! Nevertheless, productive UML tools and suitable diagrams can already be used in the analysis.
+
+The key business use cases captured are often referred to as **business use cases**. It describes:
+
+* these in card form / text form / catalog form
+* whether these are "stable" - will probably not change anymore
+* the triggers of the specific use case
+* the prerequisites for an application
+* the boundary conditions for an application
+* unclear areas that cannot yet be captured.
+
+**IDENTIFY SYSTEM USE CASES**
+
+Adapted to the specific system to be created, the following is now worked out in more detail:
+
+* Decision for each existing business use case as to whether it should be implemented in the system.
+* Addition of any missing technical exceptions and variants, for example technically meaningful termination options.
+* Breakdown of the business use cases to be implemented in terms of system technology into temporally coherent system use cases.
+* Create a system use case model.
+S
+> EXAMPLE: For example, renting a video can be done in a number of ways. Different (IT) system application processes must therefore be designed here.
+
+---
+
+## Business / Domain Classes
+
