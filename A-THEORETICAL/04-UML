@@ -1,0 +1,522 @@
+# UML
+
+(C) Prof. Dr. Stefan Edlich
+
+---
+
+## LEARNING GOALS
+
+The aim of this lesson is to familiarize you with the UML. In addition to the introduction, static structure diagrams and dynamic diagrams (behaviour diagrams) are presented.
+
+You should be able to assess the appropriate use of UML and apply UML practically in your own project. The various elements of UML should be used and the advantages and disadvantages of this form of representation should be recognized and described. The critical use of this industrial language should definitely be mastered.
+
+As a result of the practical exercise, you will be able to assess which UML diagrams to use and in which order to achieve your modeling goal.
+
+## STRUCTURE
+
+* Introduction
+* Background and history of the UML
+* Presentation of static structure diagrams
+* Presentation of dynamic charts
+* Knowledge review and exercises
+
+## TIME NEEDED
+
+You will need approximately 120 minutes to work through the learning unit and approximately 170 minutes to complete the exercises.
+
+## LITERATURE AND REFERENCES
+
+When designing, when working with UML tools and in project work, it is extremely important to use good literature in order to be able to look up the subtleties and the meaning of the notation elements correctly. The books referenced here also contain many examples.
+
+Three works should be mentioned here in particular, which were also helpful in the creation of the study module:
+
+* Fowler, Martin (2003): UML Distilled, Pearson Publishers
+* Jeckle, Rupp, Hahn, Zengler, Queins (2012): UML 2 crystal clear, Hanser
+* Oesterreich, Bernd (2006): Analysis and Design with UML 2.1, Oldenbourg
+
+more REFERENCES:
+
+* [Programming and learning UML](http://www.highscore.de/)
+* [Free UML Web Tutorials](http://www.michael-thomas.com/tech/uml/index.htm)
+* UML Reference Card from DZone (can be found in the module author's GDrive or directly after registering with DZone)
+* [OOSE notation overview](https://www.oose.de/wp-content/uploads/2012/05/UML-Notations%C3%BCbersicht-2.5.pdf)
+* OOSE (Gdrive) Methodology Guide
+
+---
+
+## UNIFIED MODELLING LANGUAGE (UML)
+
+> DEFINITION: The Unified Modeling Language is a set of notation elements that can be used to develop models for software systems. This concerns the analysis, the design and in general the presentation and documentation of the software elements or the software behavior.
+
+The UML was developed by the [OMG](https://www.omg.org/) and is specified in over a hundred pages. It has established itself as the most important notation / language for the specification of software systems. One of the most important tasks is to make the design and the associated architectures transparent for other project participants or outsiders. What is important about UML is that it does not have to be applied in an absolutely dogmatic manner.
+
+**GOAL**
+
+The goal of UML diagrams or descriptions is essentially that other people understand the message. So there is no committee that decides on the right and wrong UML. UML itself can be interpreted in many places.
+
+**BETTER GOOD DESIGN**
+
+It's certainly better to put energy into good design than into 100% correct UML. The use of representations and methods that are not UML are important for this.
+
+> For example, decision tables are often required for issues. These are not part of the UML, but are extremely useful.
+
+Experiment with UML as well as non-UML and keep talking to people who have experience in the field!
+
+> For example, many architects find that a good whiteboard design session without strict UML is worth more than lots of UML diagrams on paper.
+
+
+> *REMARK*:  The OMG manages other interesting standards such as CWM, MOF and the exchange format XMI, which is important for UML.
+
+---
+
+## UML TOOLS
+
+You need a UML tool so that you can try out everything in practice right away.
+
+Numerous UML tools can be found on the Internet. The well-known company OOSE in Germany also has a good tool site. **It will take some time before you have found "your" tool!** Make time for this! Often some settings get stuck and the tools don't show what you want or even generate faulty program code.
+
+> *NOTICE* At this point, only a few tips can be given as to which tools have already proven themselves here and there:
+
+* StarUML <https://staruml.io/> - Loved by Students
+* Together <http://www.borland.com> - Known as a powerful and flexible tool
+* Omondo <http://www.ejb3.org> - Very nicely integrated into Eclipse, unfortunately only up to the "Indigo" version.
+* Rational Rose <http://www.ibm.com> - Not free, powerful, built into the rational tool suite, has a reputation for being a bit clunky
+* Magic Draw <http://www.nomagic.com> - Paid
+* Argo UML <http://argouml.tigris.org>
+* BlueJ <http://www.blueJ.org> - Originated as a teaching tool, is closely linked to development and can only do class diagrams
+* Fujaba <http://www.fujaba.de> - A well-known free tool from the University of Paderborn
+* Astah <http://www.astah.net> - Comes from Japan
+* ObjectIF <http://www.microtool.de> by Microtool from Berlin!
+* Innovator <http://www.mid.de> - various forms for various perspectives (DB, architect, developer, etc.)
+* Enterprise Architect <http://www.sparxsystems.com> - Very powerful and comparatively inexpensive modeling tool for UML and other languages.
+
+Other Recommendations:
+
+* <http://topcased.org> CAE tool (currently unavailable, 6/28/2021)
+* <http://umlet.com> Free UML tool for quick UML diagrams
+
+Also check out the online tools:
+
+* <http://lucidchart.com> Smart charting application
+* <http://gliffy.com> charting software
+* <http://creately.com> Visual Workspace
+
+The generators are also great:
+
+* <http://plantuml.com> UML as textual description! Versionable!
+* <http://planttext.com> for live demos and live generation
+* <http://diagrams.net> also has Mermaid syntax notation: diagrams.net/blog/mermaid-diagrams
+but here too there are many alternatives such as D2
+
+**Advantages**:
+
+* Versionable in e.g. Github!
+* Can be integrated into the CI/CD cycle for the documentation!
+
+**Disadvantages**:
+
+For larger projects, the layout is difficult
+
+Check out all text to graphic tools:
+
+<http://smusamashah.github.io/text-to-diagram>
+
+---
+
+## DIAGRAM OVERVIEW
+
+Structure diagrams and architecture diagrams are also known as static diagrams. Behavior diagrams and interaction diagrams are also often referred to as dynamic diagrams.
+
+**Structure Diagrams**
+
+|Name|Task|
+|--------|--------|
+|Package Diagram  |Shows the concrete structure of the software in namespaces or packages with their dependencies.|
+|Class Diagram|Represents the classes of the respective programming language with their relationships.|
+|Object Diagram| Shows objects - i.e. in which state the classes can occur, for example.|
+
+**Architecture Diagrams**
+
+|Name|Task|
+|--------|--------|
+|Deployment diagram| Shows where the (mostly hardware) systems and their components are installed in their parts on computer nodes.|
+|Component Diagram| Shows the component structure with the relationships between each other.|
+|Composite Structure Diagram| Shows the components with their very specific exported and imported interfaces.|
+|Subsystem diagram| (Subsystem Diagram) Architectural relationships between components.|
+
+**Tab. 4: Behavior Diagrams**
+
+|Name|Task|
+|--------|--------|
+|Use Case Diagram|Represents the actors with their use cases (quasi wishes).|
+|Activity Diagram|Shows how the program runs using actions, transitions and branches.|
+|State Diagram|Object states are shown here. There are transitions between states. An automaton can specify the order of the transitions even more precisely.|
+
+**Tab. 5: Interaction Diagrams**
+
+|Name|Task|
+|--------|--------|
+|Sequence Diagram|Represents how classes or components interact/communicate using messages.|
+|Interaction Overview| A combination of activity and sequence diagram.|
+|Communication Diagram| Graphically arranges the exchanged messages for convenient presentation.|
+|Timing Diagram|Describes the time sequence of the object states (often used in telecommunications and control / regulation technology).|
+
+---
+
+## UML HISTORY
+
+**THE BEGINNING**
+
+Dealing with the topic of object-oriented analysis / design only gained momentum in the 1990s. Authors who made a name for themselves early on were **ADELE GOLDBERG, GRADY BOOCH, PETER COAD, EDWARD YOURDON, JAMES RUMBAUGH, BERTRAND MEYER and IVAR JACOBSON.**
+
+**ANALYSIS VS. DESIGN**
+
+The methods of JAMES RUMBAUGH and GRADY BOOCH prevailed early on. However, both competed. RUMBAUGH's method appeared to be better for analysis and BOOCH's method was arguably more advantageous for design. JAMES RUMBAUGH was also hired by the Rational Software Cooperation in 1994, where he was also responsible for the further development of the IBM tool suite.
+
+**UNIFICATION TO UM**
+
+Joined by the powers of **IVAR JACOBSON**, RUMBAUGH and BOOCH then attempted to bridge their differences and create a unified language. This of course partly due to pressure from the industry. After all, money could definitely be made with the appropriate tools and process models based on UML.
+
+IVAR JACOBSON's company Objectory was then also bought by Rational and the **"Unified Method" (UM)** arose from the standardization of the methods.
+
+![History](ressources/04-UML-History.png)
+
+**Pic**: UML History
+
+BOOCH, RUMBAUGH and JACOBSON were henceforth called **the three amigos**. A self-critical statement by JACOBSON is known from the time of their fierce battles over methods, the discussion process and the difficult negotiations, which is often quoted:
+
+> QUOTE: "What's the difference between a terrorist and a methodologist?
+> You can negotiate with a terrorist!"
+> Ivar Jacobson
+> FROM UM TO UML
+
+However, the pressure grew to develop a non-proprietary language based on UM: the "Unified Modeling Language" (UML). An international consortium developed the UML in 1996 and then handed it over to the OMG. This is how UML 1.1 came about in 1997. It then gradually developed into version 2.0, which was the last officially downloadable version until 2006. Version 2.5 from June 2015 is currently available in the OMG download area. But there might be later versions.
+
+---
+
+## UML STRUCTURE
+
+The latest UML specification can be downloaded from the [OMG](https://www.omg.org/)  website – older versions are also available there.
+
+It's worth poking around the UML websites for a moment.
+
+The specification is divided into the following parts:
+
+**UML 2.0 Infrastructure Specification.**
+
+Basic elements of the UML are presented here, which are a prerequisite for the following specifications. Elements such as class, association or multiplicity are presented.
+
+**UML 2.0 Superstructure Specification**
+
+The actually known elements of the UML are defined here and presented with use cases and deeper concepts.
+
+**UML 2.0 Object Constraint Language**
+
+The last document specifies boundary conditions for some types of diagrams. She is e.g. B. important for class diagrams (see chapter "Class Diagram") or sequence diagrams (see chapter "Sequence Diagram"). There, invariants, pre/post conditions or guards restrictions can be specified. For example, it is very helpful to specify pre- and post-conditions for methods or to note boundary conditions for fields (e.g.: "must never be < 0"). These boundary conditions are then z. B. also important for machine processing of the UML.
+
+**UML 2.0 Diagram Interchange**
+A fourth part specifies the layout of the diagrams. With this specification, the layout should no longer get lost with the cross-tool exchange of diagrams, since each diagram is described using a graph (nodes, edges, leaves).
+
+---
+
+## HOW TO USE UML?
+
+UML may be a nice notation, but some might not yet be able to see what areas of application there are.
+
+**Communicate and Abstract**
+
+**COMMUNICATE IDEAS**
+
+The real purpose of the UML is to **communicate ideas**! The question is always what is the best and quickest way to get the design of a system across and how to document it. It is clear that UML may not always be the best tool, nor can it be complete.
+
+**CRITIC**
+
+Therefore there are also many critics who say that UML is too big and too complex. UML tries to please everyone. Nevertheless, UML has established itself over all of its previous notations. It is the language that has prevailed in the industry and which you should definitely master, but still look at critically.
+
+**ADVANTAGE: HIDE DETAILS**
+
+Another important benefit of the UML is that it allows you to hide details and later refine them with or without the UML. In many cases you need to approach the system top-down and specify concrete parts or components from the vision/analysis.
+
+*UML DIAGRAMS HELP*
+
+How do you do this? UML diagrams can help here to define the rough structure/requirements and then to write them down in finer diagrams. But often you just have to talk to other designers, analysts, stakeholders, project managers or clients who sometimes have no idea about IT. How do you present the system to them? Although many of the groups of people do not have extensive IT skills, most do have an understanding of UML and are familiar with the meanings of some diagrams. You will soon be able to explain the meaning of a use case or deployment diagram well enough to convey the basic structure of your system.
+
+**Reverse Engineering**
+
+**TOOLS GENERATE UML DIAGRAMS**
+
+One possible application of UML that has so far been little documented is reverse engineering. You may already have a system that is to be further developed and you would like to get an overview of the system. Good tools can analyze the existing code and generate various UML diagrams from it. It can be very helpful to start by showing a few diagrams (e.g. class, package or component diagrams) from a mountain of code so that you can first understand the program “meta”.
+
+**COMPETITIVE ADVANTAGES IN INDUSTRY**
+
+Reverse engineering is an approach that should not be underestimated in the industry when it comes to achieving competitive advantages. A well-known example of reverse engineering is the "Lotus 1-2-3" spreadsheet: The program was "disassembled", "understood" and rebuilt as "MS Excel" by Microsoft. That too is reverse engineering.
+
+**Sketch / blueprint mode**
+
+**INFORMAL UML**
+
+In addition to the written documentation of an architecture by architects, UML is often used more informally in team discussions, so to speak, as a sketch. In sketch mode, informal UML is used and the UML diagrams presented mostly only show the interesting parts of the system that is about to be discussed.
+
+In the first-mentioned blueprint mode, the architect of the system is usually busy depositing the design of the software more or less completely (blueprint = blueprint; a term from architecture).
+
+Sketch and blueprint mode are not to be used synonymously. Sketch is a little discussion about snippets. Blueprint is a larger architectural specification.
+
+**Programming Language / MDA**
+
+**FURTHER PROCESSING BY MACHINES**
+
+An important element of the UML is that it can itself be further processed by machines. The UML and the associated languages such as XMI (XML Metadata Interchange) are read by frameworks, which can then also generate code.
+
+Developing software is relatively expensive - European IT companies in particular need to see how they can create high-quality (!) high-quality software competitively and quickly.
+
+**AUTOMATED CODE GENERATION**
+
+This can certainly be done in part by automatically generating code. If UML diagrams describe the components, packages, classes and even the behavior of software, why not generate as much code as possible? In this case, the UML itself would be something like a high-level meta-programming language.
+
+**MODEL DRIVEN ARCHITECTURE**
+
+This approach leads us to the research area of MDA (Model Driven Architecture), for which there are already a surprising number of powerful frameworks. Unfortunately, many of these toolkits are hidden in the industry. But there are also some good free toolkits, e.g. B. under AndroMDA.
+
+MDA is part of a study module "Model-based software construction" and is dealt with more intensively there.
+
+![](RESSOURCES/04-UML-mda.gif)
+
+The most important branch is shown on the left. You model in UML. From this you can, if necessary, create a model - the **Platform Independent Model (PIM)** - which is more concrete, but still independent of the underlying technology.
+
+**PLATFORM SPECIFIC MODEL**
+
+In the next step you would (all with MDA Tools) generate a PSM (Platform Specific Model) that contains concrete and executable code for a platform. E.g. code for a .NET or J2EE platform. That means there are actually frameworks that can generate executable code for you - sometimes even executable applications that work a lot with templates or ready-made building blocks.
+
+**EXECUTABLE UML**
+
+Another approach is **executable UML**. Here the intermediate step - the PSM to be created - is skipped and the code is generated immediately afterwards. Archetypes help to describe how the coding step from UML to code should happen.
+
+---
+
+## DESIGN-FLOW
+
+When dealing with design, the initial difficulty often lies in knowing what the concrete procedure looks like. The priority here is to clarify which diagram should be selected first and why.
+
+> "What order is best?" 😵
+
+Of course, this question is difficult to answer and depends 100% on the system to be designed. 
+
+Nevertheless, a suggestion should be dared here, which is based on project experience and takes into account the degree of abstraction of the diagrams:
+
+**Level of abstraction of diagrams**
+
+1. **Use Case Diagram**
+
+The use cases are certainly one of the most abstract. What the user wants from the system should usually be known first and belongs more in the analysis than in the design.
+
+2. **Deployment Diagram**
+
+Since it is shown here where which rough component runs, this is also very abstract. Here it is more or less about physical locations for large projects - i.e. server X here, many clients there, an accounting server there, etc. That is abstract and usually belongs far ahead.
+
+3. **Package Diagram**
+
+The packages mostly contain namespaces for the collection of components and classes. This is usually also defined early in the project so that developers already have a playground to test things before things really get going. Indirect responsibilities are also defined here.
+
+**Component Diagram**
+
+Packages usually contain components, which mostly consist of a collection of classes. Therefore, component diagrams must be created before class diagrams.
+
+**Class Diagram**
+
+For this reason, class diagrams should be created after packages and component diagrams.
+[Composite Structure D, Subsystem D, Object D]
+The diagrams mentioned here are not used all that often and are often thrown in at any point throughout the design phase.
+
+**Activity Diagram**
+
+An application's activities are typically specified much earlier in this order, so that the flow structure of the application is clear. This can often be the premise for the designer to understand the components. Sometimes even before the deployment diagram but after the use cases. For the sake of clarity, it is located here after the static diagrams with the dynamic diagrams.
+
+**Sequence Diagram**
+
+They show the behavior of components or classes. As a rule, components or classes must first exist so that the sequence diagram can be modeled.
+
+**State Diagram**
+
+The state of the application, the components or classes can also be modeled at any time in the design phase. Usually this happens after the use cases, deployment and activity diagrams have been created.
+
+**[interaction overview Diagram, timing Diagram]**
+
+These less commonly used charts can also be used anywhere if needed.
+
+Exersise: 
+
+So it would be ideal now if you take your own motivating (private) project and model it and accompany it over a longer period of time.
+
+Perhaps the above orientation in the design process and the following explanations of the specific diagrams in the "Static Structure Diagrams" and "Dynamic Diagrams" chapters will help.
+
+---
+
+## UML ASSESSMENT
+
+**CONTROVERSIAL ISSUE**
+
+In reality, the importance of UML is much more controversial than it appears.
+
+**ACADEMIC AREA**
+
+In academia, UML is taught in many places, as there are still many advocates on the part of the university. It is not uncommon for this to be adopted uncritically in industry.
+
+**IN COMPANIES**
+
+However, there are companies and movements that value the usefulness of UML much less. Especially in an agile environment, other techniques are therefore often used. This can already be seen from the now quite "old" XP model, which also does not provide for extensive UML artifacts. **In some major companies such as Google, UML is even banned**!
+
+This is not to say that UML is completely forbidden. If two developers really want to "talk" with UML, this is not a problem. However, the power of a prototype or a prototypical architecture is considered much more efficient in the corporate culture than a UML paper.
+
+**JUDGE YOURSELF**
+
+It is therefore crucial for every software engineer to know the range of tools or means of communication and to be able to judge for himself to what extent UML is a suitable means or whether other methods are more suitable.
+
+> **IMPORTANT NOTICE**: Here, for example, the **https://c4model.com/** model should be mentioned that feels like a subset of UML. What do you think, which UML diagram goes somewhat with the four C4 diagrams?
+
+---
+
+## STATIC STRUCTURE DIAGRAMS
+
+This part introduces the static structure diagrams:
+
+* **Deployment Diagram**: How are the software components physically distributed?
+* **Component diagram**: What units / components does the software system consist of?
+* **Package diagram**: Which specific packages / namespaces are used to hierarchize the components?
+* **Class Diagram**: What classes are there (in a namespace)?
+* **Composite Structure Diagram**: How are components related in more detail?
+* **Object Diagram**: Which objects exist at a certain point in time?
+
+---
+
+## DISTRIBUTION DIAGRAM
+
+Deployment DiagramThe deployment diagram is specified relatively early. Relatively soon after the use cases. The point of this diagram is to show the physical structure of the entire application - which components are running where and on which physical devices.
+
+This is often difficult for students to understand, since you usually only write small projects that only run on one computer.
+
+For example, in the Toll-Collect project, there are various data centers, satellites, devices on highways and devices in rest areas. Very different software is running on very different computers in many places.
+
+The goal of the distribution diagram is to provide a coherent representation of the physical distribution. Here's an example:
+
+![Deployment](RESSOURCES/04-Deployment.gif)
+
+Pic: Deployment Diagram of the Toll-Collect system
+
+> Here we see an example of the Toll-Collect toll collection system. Trucks are detected on the freeways. This data is then sent to the control center via satellite. There, the components in the central system show which tasks the components perform. For example, users can either go to the rest stops or pay online or by post. This example is intended to help you understand the physical distribution of such large systems.
+
+**Notation**
+
+The individual physical locations / nodes (possibly servers) are represented by boxes / cuboids. The boxes are connected to each other by simple lines and represent the communication between each other. Components or artefacts can be displayed in the boxes. Artifacts can be, for example, files of different formats such as jar, dll, war.
+
+The connections of the nodes describe the type of communication connection. Multiplicities can also be specified.
+
+>EXAMPLE: For example, you can specify that up to 1000 clients can connect to the server at the same time.
+
+
+**TASK**
+
+For practice, it is advisable to simply model a larger system than what you later want to build or specify more precisely. This leads to a more comprehensive distribution diagram. Alternatively, plan your application as a more complex distributed system.
+
+**NOTICE**
+
+Imagine the system administrator comes to you knowing he has work to do and wants to know what hardware he needs to deploy. The distribution diagram helps him with this. With the additional components in it, he also has the opportunity to understand what the system is supposed to do roughly and can also estimate the costs right away.
+
+---
+
+## COMPONENT DIAGRAM
+
+The component diagram describes a specific set of components. The component diagram is the answer to the question of how the specific system is structured.
+
+As a rule, there are several classes, but it can also be just one class, but it does not show any details. The deployment diagram already showed a number of components that individually or together fulfill one or more specific tasks.
+
+It is important that you can and should specify dependencies of the components. Components provide interfaces that can be used by other components. 
+
+BERND Österreich writes:
+
+> QUOTE:  “A component is instantiable much like a class and encapsulates complex behavior. With it, units are formed that have a high level of technical coherence. In contrast to a class, the basic interchangeability (substitutability) of a component is also striven for. A technical platform for components is, for example, Enterprise Java Beans (EJB).” [Oes98] 
+
+**Notation**
+
+The component is a rectangle with the typical "Lego icon" in the top right corner. It contains the keyword \<\<component\>\>, which is often not shown for the sake of clarity. A component can be identified by \<\<component\>\> and/or by the Lego symbol.
+
+It is allowed to insert other elements - like objects or components - into the object, but this can easily lead to very complex diagrams (packable element).
+
+![Component](RESSOURCES/04-Component.gif)
+
+Pic: Example Component Diagram
+
+**What does this diagram show?**
+
+* Some components (denoted with the Lego symbol or \<\<component\>\>)
+* Some artifacts on the right. This can be paper or software.
+* The balls that the semicircle engages with are also interesting. The sphere is the provided interface. The semicircle the required interface.
+* With small squares, there are still ports that implement access to the component that is not based on interfaces, so to speak.
+
+In diagrams, the keywords \<\<realize\>\> or \<\<reside\>\> (from which class is this component realized) or \<\<implements\>\> from different UML variations are still floating around. The latter describes the concrete interface that this component also implements.
+
+Again, one can imagine that this diagram is not only used for internal communication, but also for dialogue with developers and clients.
+
+**Some examples:**
+
+* The customer wants to know how the new components interact with the old ones.
+* The client wants to know and then decide for himself which components (or modules) he can buy when and how they then fit together.
+* The junior developer would like to know from you in which components he put it, e.g. B. full-text indexing system. He asks how it works, how to build it. You draw a diagram with components such as the parser, configuration of the search engine, configuration of the external modules, activation of the engine, handling and processing of the results, etc. Result: The junior developer understands and has an idea of the structure.
+
+> Design patterns such as **MVC** are often reflected here!
+
+> **IMPORTANT**: In this context, it is important that UML also has the *Subsystem* stereotype, which is often used in component diagrams. Basically, only a container for other components is set up here - represented as a simple box with the *subsystem* stereotype.
+
+---
+
+## PACKAGE DIAGRAM
+
+The package diagram structures the namespace of packages, components or classes.
+
+**HIERARCHICAL STRUCTURE**
+
+It usually corresponds to the packages in Java or to the namespaces in C#, for example *de.vfh.portal.database*, which can contain the access layer class. A hierarchical structure that enables the model element to be clearly identified is important.
+
+![Package Diagram](RESSOURCES/04-Package-Diagram.png)
+
+Pic: Package Diagram
+
+The figure shows that all the packages drawn should be classified under the **de::vfh::portal** namespace.
+
+A presentation package will appear at the top. This contains a package for a rich client, such as B. for a swing GUI and a thin client, such as e.g. B. an old JSP application.
+
+In the middle you can see the application package, which contains four sub-packages. A front handler for communication with the GUIs, a controller for flow control, the domain objects (i.e. the business objects) and a package for management with external applications.
+
+Below you can see different layers for the database connection.
+
+The package diagram thus shows the hierarchical structure of the model elements and reveals layers and component blocks.
+
+There are also package merges in the notation, which are not explained further here and are not very important in practice. Try to find something about it yourself.
+
+**BACKGROUND KNOWLEDGE**
+
+Why are package diagrams so important?
+
+* In practice, package diagrams are important because the developers ask for a "playground" early on and want to develop test code.
+* Packages, like component diagrams, can reflect the real architecture of the system. Design patterns and layers in the application become transparent here. It is important that transparency is provided at an early stage, that it is discussed sufficiently from the outset or that experienced designers are used.
+
+**DEPENDENCIES**
+
+Package diagrams are the most important because you can use them to model the **dependencies**. So try to draw the package and then ask yourself: who is using whom? Draw this on the diagram with arrows. This will show you the "Used Structure". This used structure is extremely important for good design or architecture.
+
+**CONFUSED STRUCTURE OR FLOW?**
+
+Is there a completely confused structure here, who uses whom? Or is there a clear flow from top to bottom? The latter is very important for a mutable architecture.
+
+> **For example**, in a package diagram that contains used relationships, you can also see very nicely whether there are cycles in use - so package A uses package B and vice versa? If this is the case, a redesign is often necessary.
+
+**OUTLOOK**
+
+In the last chapter we see that there are many tools that automatically analyze the **uses relation** between packages and point out problems.
+
+But now you can experience this for yourself by designing a package diagram in such a way that there is a hierarchical used relation in addition to the hierarchical namespace. Your code becomes more maintainable and less sensitive to changes.
+
+---
+
+## CLASS DIAGRAM
+
+
