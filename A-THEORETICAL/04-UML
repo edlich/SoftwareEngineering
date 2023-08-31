@@ -639,7 +639,7 @@ The UML already specifies a series of so-called "standard stereotypes" that are 
 
 ---
 
-## ASSOTIATION
+## ASSOTIATIONS
 
 The association describes a relationship between the classes in which one object uses the other.
 
@@ -648,7 +648,6 @@ The association describes a relationship between the classes in which one object
 **Pic**: Assotiation
 
 Here's an **example**: Let's assume a customer would be the class. Several invoices can be assigned to this class. The customer object must be able to access invoice objects.
-
 
 Aggregation and composition are special cases of association.
 
@@ -710,3 +709,393 @@ It's different with an association (aggregation) to its members. When a club is 
 
 ## INHERITANCE / GENERALIZATION / SPECIALIZATION
 
+With inheritance, all attributes and methods are also available in the subclass. This is noted in UML with an **arrow** that is **not filled**.
+
+![Inheritance](RESSOURCES/04-General.jpg)
+
+Pic: Interitance
+
+Linguistically, a distinction is made here between **generalization** and **specialization**:
+
+* *Generalization* denotes the more general properties of superclasses.
+* The *specialization* designates the subclasses that add further special properties (attributes) and methods to those of the superclass.
+
+**INHERITANCE**
+
+In many cases, delegation makes more sense than inheritance because it does not violate the secrecy principle. In many cases - such as B. in graphics libraries - but inheritance makes sense. Remember to always analyze this well yourself.
+
+Multiple inheritance is allowed in some programming languages. In this case, or if several subclasses derive from a superclass (upper class), arrows can be combined.
+
+---
+
+## COMPOSITION STRUCTURE DIAGRAM
+
+The existing diagrams are often not sufficient to show which elements make up a class or a component.
+
+![Composition structure diagram](RESSOURCES/04-CompoStruct.jpg)
+
+Pic: Composition structure diagram
+
+**DEPICTION**
+
+This diagram is drawn with the parent component in a box. This contains two sub-elements. In these elements, the name of the part (part) followed by a colon and a type of the part can be represented.
+
+The multiplicities are given behind them either in square brackets or in superscript (as in the square). The parts can in turn be connected to a role.
+
+---
+
+## OBJECT DIAGRAM
+
+The object diagram shows the exemplary state of one or more objects in a system. It's like a photograph of the system in which the objects may have particularly interesting values right now. It is like an instance diagram in which concrete attribute values can be specified.
+
+![Object Diagram](RESSOURCES/04-ObjectDia.gif)
+
+Pic: Object Diagram
+
+So this picture shows classes in a **certain state**.
+
+A few more points:
+
+* You are very free in defining the object class or the attribute type. These elements can also simply be omitted.
+* This diagram can also be useful if OCL expressions are also specified. This would e.g. For example: contect tires inv: size > 20 (thus, tires that are too small are not allowed).
+* As shown above, links can also be drawn between the objects. These are then the associations, so to speak, and are only further refined with the role.
+
+The figure below shows another example:
+
+![Object Diagram](RESSOURCES/04-ObjectDia2.png)
+
+Pic: Example Object Diagram
+
+---
+
+## DYNAMIC DIAGRAMS
+
+This part continues with the dynamic charts, where interaction happens:
+
+* **Use case diagram** → What use cases are there?
+* **Activity Diagram** → What does a web look like through the application?
+* **State diagram** → Which states can the program assume?
+* **Sequence Diagram** → How do classes/objects communicate with each other?
+* **Interaction diagram** → An activity diagram that replaces individual activities with interactions
+* **Communication Diagram** → Represents complex communication processes
+* **Timing diagram** → status lines for the embedded or electronics area
+
+---
+
+## USE CASE DIAGRAM
+
+Use case diagrams are called use case diagrams in both English and German. This diagram is quite important and is almost the first UML diagram drawn in projects, because it is as much abstract as possible.
+
+**GOAL**
+
+The aim is to show as simply as possible what you want to do with the software system to be built. So what cases of application there are! We know from the analysis phase that use cases need to be documented. It describes work processes in the system that should be possible. In the UML, this should now be supported even more easily with simple graphics.
+
+**ACTORS AND USE CASES**
+
+The diagram shows so-called **actors** as stick figures. This can be people such as customers, administrators or any other user. It is important to mention them all.
+
+From them, dashes go to the respective use cases, which are written in an ellipse. In order to group this all, you put all related use cases in a box.
+
+![Use Case Diagram](RESSOURCES/04-Use-Case.png)
+
+Pic: Use Case Diagram
+
+**USE CASES COMMUNICATE**
+
+With the use case diagram, the use cases should be communicated as simply as possible - for example to the management. A glance at such a diagram is usually enough for the viewer to immediately develop an idea of the system or suggest their own ideas. This is often more efficient than reading extensive use case documentation.
+
+**DESIGNATION**
+
+The lines between the actors and use cases can be named and provided with cardinalities as in the class diagram.
+
+**EXAMPLE** Only two pilots want to have programmed the use case "switch off autopilot".
+
+Notice in the example above that it feels like the actions are top-down, but:
+
+> **IMPORTANT**: Use case diagrams are not directed!
+
+**Activity diagram**s are there for the chronological sequence. Mixing diagram types is a common mistake made by UML newbies. Connecting complex use cases in a use case diagram with many arrows is not correct.
+
+**Other Use Case Relationships**
+
+* A dashed arrow indicates that an implementation is available. This means that the use case "go to the registration office" can be implemented, for example, by having two cases connected by a dashed arrow, which e.g. B. can mean “drive to the registration office by car” and “walk to the registration office”. Both together realize the main application.
+ 
+* If you write `<<include>>` next to the dashed arrow, the use case pointed to is included. Sort of like you know it from programming languages. So if the use case internally consists of three parts A, B, C, you can outsource part A as a use case and connect it with `<<include>>` and a dashed arrow and, if it is important, display it again separately.
+ 
+* Conversely, with `<<extends>>` and a dashed arrow you say that a use case can be extended with another one. The arrows always go from the extend / include object to the main object that uses it.
+ 
+* A specialization arrow (similar to that in the class diagram) indicates that several "sub-use cases" make up a more general use case. For example, a use case can be "standard authentication", which is carried out either with an "electronic ID card authentication" or with a "mobile phone number authentication".
+
+---
+
+## ACTIVITY DIAGRAM
+
+The activity diagram is called an activity diagram in English. It is one of the most complex diagrams with its many elements. Not all elements can be reproduced here, but they can easily be looked up in the OOSE UML overview.
+
+> **WEBSOURCE**: [UML Notation Overview 2.5 (PDF)](https://www.oose.de/wp-content/uploads/2012/05/UML-Notations%C3%BCbersicht-2.5.pdf)
+
+We limit ourselves here to the most important elements.
+
+**SHOWS THE SEQUENCE**
+
+The activity diagram is usually applied quite early in the modeling phase and shows the sequence in which the user is guided through a possible path of application. There are **action nodes**, **object nodes** and **control nodes**. The latter allow branching and making decisions.
+
+**VISUALIZATION**
+
+Activity diagrams visualize and explain the flow of the program, which is often very difficult to describe with natural language or the written word.
+
+![Activity Diagram Example](RESSOURCES/04-Activity.gif)
+
+**Pic**: Activity Diagram Example
+
+You can see some action nodes in this diagram (still called activities in the days of UML 1), as well as a start node and an end node. There is a branch on the right. Object nodes are not shown. You could insert objects at various points that are then available at this point.
+
+> For **example**: a flight object that is selected by the customer after a successful search, or an object that represents the entire flight including customer and payment data.
+
+**PARTIAL STEPS**
+
+As in many UML2 diagrams, it is possible to put diagrams in a box and thus illustrate that an activity can consist of several sub-steps.
+
+**Control Node**
+
+Branching, merging or decisions are represented with control nodes. In the case of merging, conditions can be specified and in the case of branches, conditions can be written to the outgoing arms.
+
+![Control Nodes](RESSOURCES/04-ControlNode.gif)
+
+**Pic**: Control Nodes
+
+For merging nodes, conditions can be formulated like this:
+* `{joinSpec=(X or Y) and (M or N)}`
+Conditions can be specified in square brackets for branches:
+* `[X < 0]`
+
+**Additional Elements**
+
+* **Parameter Pins for Object Nodes**: Pins represent in and out parameters for objects.
+
+* **Swimlanes**: Swimlanes can represent areas, as can be the case in sequence diagrams.
+
+* Sig*nals: Signals can be embedded in the control flow of many diagrams. These are presented as below.
+
+![Signals](RESSOURCES/04-SendReceive.gif)
+
+**Pic**: Signals
+
+![cooking spaghetti](RESSOURCES/04-Spaghetti.png)
+
+**Pic**: Example of an activity diagram for cooking spaghetti
+
+---
+
+## STATE DIAGRAM
+
+The state diagram describes the behavior of a system when certain events occur. Such a state machine goes back to old attempts at modeling *Mealy* and *Moore* machines.
+
+A state machine contains:
+
+* nconditions (this also includes composite states and entire substates)
+* transitions
+* regions / areas
+* start and end state
+
+![State Diagram](RESSOURCES/04-StateChess.gif)
+
+**Pic**: Example for a State Diagram
+
+**NOTATION OPTIONS**
+
+The notation possibilities differ greatly from application to application. In the simplest case, there is only one box for each state, in which the state is described. In this case (unlike in the picture here) the horizontal line should be omitted. Shown here are the three simplest states of a (chess) program, which can assume three states.
+
+Usually, each diagram is framed with a box in which the name of the entire state diagram is at the top.
+
+It is also possible to refine use cases in the use case diagram using state machines. This will e.g. B. often done during authentication.
+
+**NOTATION ELEMENTS**
+
+A state is usually (but optionally) provided with an understandable name in the upper box.
+
+The following information about states can be made in the state:
+
+* **entry** / activity → entry activity
+
+* **exit** / activity → exit activity
+
+* **do** / activity → ongoing activity
+
+* **Trigger / defer** → delay, a distinction is made between:
+  * SignalTrigger
+  * CallTrigger
+  * TimeTrigger
+  * ChangeTrigger and
+  * AnyTrigger for everything
+
+> A guard is a condition that can be specified at a transition.
+
+**OTHER ITEMS**
+
+Other elements are already known from other diagrams (such as activity).
+
+![More Diagram Elements](RESSOURCES/04-Acti1.gif)
+
+**Pic**: More Diagram Elements
+
+![](RESSOURCES/04-Acti2.png)
+
+**Pic**: State Diagram Example for a Washing Machine
+
+---
+
+## SEQUENCE DIAGRAM
+
+Sequence diagrams describe a dynamic view of the system. So you use them when you want to show how classes interact.
+
+Since method calls between classes are also referred to as messages that are sent, the diagram shows the messages in chronological order.
+
+**POSSIBLE ELEMENTS**
+
+(Underlined) objects are shown above. However, classes or even coarser units are also possible. They have lines down: so-called **swimlanes** or **lifelines**.
+
+Blocks on these lines show how objects are instantiated. **Messages** then go from them to other object (blocks). These are shown as **horizontal arrows**. Messages can have return arrows. The diagrams allow the display of synchronous (filled arrows) and asynchronous messages (open arrows).
+
+At the same time, signals can be received as in the previous diagrams, or branches, iterations and recursions can be displayed. To do this, boxes are drawn in the diagram and then, for example, loop (loops) or alt (if) are drawn in.
+
+An initial start message (found message) can start the sequence diagram.
+
+> **EXAMPLE** The diagram below from SUN Microsystems shows one of the best and most typical use cases for sequence diagrams - design patterns. A good data access architecture is shown here:
+
+![Sequence Diagram Example](RESSOURCES/04-DAO.gif)
+
+**Pic**: Sequence Diagram Example
+
+**EXPLANATION OF EXAMPLE DIAGRAM**
+
+What's happening here? The **DAO** pattern is shown. It contains four objects. Let's go through it for a moment. Not to understand the pattern, but to show why sequence diagrams are useful.
+
+* A business object requires data from the persistence layer (the data access layer, ultimately from the database).
+
+* It addresses a DAO object that is responsible for all database connections.
+
+* This DAO knows which data access is currently current and gets the database connection via the DataSource.
+
+* A data transfer object then contains the data in a suitable form (e.g. better than ResultSets) and this is returned to the business object in 2.3.
+
+What follows from 3 to 5.3 is the reverse direction, the content of which need not particularly interest us here. For the sake of form: instead of data e.g. B. writing back via **JDBC**, it is state-of-the-art today to change the transfer object and then have it saved via the DAO.
+
+**TRANSPARENT PRESENTATION**
+
+You saw from the scenario how useful sequence diagrams are. The communication of four important objects in the data management layer becomes more transparent through the representation. Together with the **Active Record Design Pattern**, the example shown shows the most important design patterns of the data management layer.
+
+**TWO COMMUNICATION SCHEMES**
+
+It is interesting that there are often two types of communication schemes in sequence diagrams:
+
+* **Centralized Control**: One object does the work (calculates or controls the threads like a spider) and everyone else does the work.
+
+* **Distributed Control**: All classes/objects have equal rights and “calculate” as it were. There is no central control.
+
+In many cases, the second structure is more advantageous and allows for more object-oriented concepts (polymorphism, overriding, etc.).
+
+> **TASK**: For more in-depth look at the following tutorial:
+> Link: [Tutorial UML Sequence Diagrams.pdf](https://vfhswt.eduloop.de/mediawiki/images/vfhswt.eduloop.de/7/71/Tutorial_UML_Sequenzdiagramme.pdf) (in German)
+
+![Another Example for a Sequence Diagram](RESSOURCES/04-Lieferscheine.gif)
+
+**Pic**: Another Example for a Sequence Diagram
+
+> **WEBSOURCE**: You can find another example [here](https://technet.microsoft.com/de-de/library/dd409377(v=vs.120).aspx) (in German)
+
+---
+
+## INTERACTION DIAGRAM
+
+An interaction diagram is a mixed form of an activity diagram in which individual activities are explained in more detail using an interaction diagram.
+
+In concrete terms, there is an activity diagram in which individual states are to be explained in more detail. Then these states are enlarged in the diagram and an interaction diagram is embedded, i. H. displayed.
+
+This is always used when states in activity diagrams are very complex.
+
+---
+
+## COMMUNICATION DIAGRAM
+
+The communication diagram represents more complex communication processes.
+
+![Communication Diagram](RESSOURCES/04-CommuniDia.png)
+
+**Pic**: Example Communication Diagram *© uml-diagrams.org*
+
+What we're seeing here is an attempt to get a complex sequence of events right.
+
+* Checking the inventory
+* Interested in buying
+* Check the inventory
+* Get the book
+* etc.
+
+FIELD OF APPLICATIONS IN THE IT
+
+In computer science, such a diagram is always used when the contents of the states, transitions and data are not important, but the elements should be shown in a diagram.
+
+EXAMPLE
+This means, for example, that the tasks or data of the press are not important, only that they exist and how they interact.
+
+---
+
+## TIMING DIAGRAM
+
+**AREAS OF APPLICATION**
+
+Timing diagrams are mostly used for the embedded area or for electrical engineering applications. It is only in these areas that there are processes or occurrences that are so precise that they have to be presented in terms of time.
+
+**DELIMITATION**
+
+In the otherwise usual modeling of software processes - such as B. in an activity diagram - the chronological sequence does not matter. A booking process can take seconds or even hours.
+
+The graphs look like signals on an oscilloscope and include:
+
+* timeline,
+* conditions and,
+* messages that can lead to a change of state.
+
+![Example for a Timing Diagram](RESSOURCES/04-TimeDia.gif)
+
+**Pic**: Example for a Timing Diagram
+
+---
+
+## SUMMARY
+
+This lesson introduced:
+
+* As a set of interaction elements, the UML serves as a method with the help of which models for software systems are developed.
+* UML helps determine the design flow.
+* The fathers of UML are GRADY BOOCH, JAMES RUMBAUGH and IVAR JACOBSON. They are also called "The Three Amigos".
+* UML is not a dogma and not absolutely necessary for the development of a software system.
+* The purpose of UML is to communicate ideas. By using different diagrams, facts can be represented that would be difficult to represent in writing or in language.
+* Various types of diagrams are used for representation in UML. There is a division into:
+  * **static structure diagrams** (To show the structure of modules of a software system. The UML knows six structure diagrams - class diagram, composition structure diagram, component diagram, distribution diagram, object diagram and package diagram.)
+  * **dynamic diagrams**, also behavior diagrams (To represent functional processes. In the UML, seven behavior diagrams are used - activity diagram, use case diagram (also - use case or use case diagram called), interaction overview diagram, communication diagram, sequence diagram, timing diagram and state diagram.)
+
+There are a variety of tools that support modeling with UML.
+
+---
+
+## EXCERCISE UML
+
+**Submission task UML**: 
+
+Choose your own UML tool and create diagrams. Find a UML tool for yourself!
+
+Then design a big system of your favorite project with UML.
+
+To do this, design at least **five** diagrams!
+
+A class diagram must be included.
+
+The class diagram should:
+
+* contain at least seven classes,
+* also a few cardinalities or
+* contain an aggregation/composition.
+
+(Processing time approx. 60 minutes)
