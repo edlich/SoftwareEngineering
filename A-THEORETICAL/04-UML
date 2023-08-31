@@ -519,4 +519,194 @@ But now you can experience this for yourself by designing a package diagram in s
 
 ## CLASS DIAGRAM
 
+A class diagram visualizes classes in several ways. For this purpose, the classes themselves are shown, possibly also their relationships to one another and possibly also their inner structure. Two goals are common:
+
+* Representation of classes and relationships: Different classes of a package or component are represented in the diagram. It is important to show which classes exist and which class is used by others. The latter is called associations.
+* Representation of the internal structure: The author of the class diagram then wants to show or define which attributes or methods the classes have.
+
+**COMBINATION**
+
+Both forms are often combined with each other and then form a detailed class diagram.
+
+But more information can be accommodated in the class diagram:
+
+* Which stereotype does the class correspond to, for example a display class, a controller class, etc.? This will be explained in more detail later.
+
+* What is the structure of the attributes and methods? Which signatures do the methods have? This is about visibilities like public / private, the types like int or string or the parameters like int b, string c.
+
+**Example: Simple class diagram**
+
+The following example shows a simple class diagram, which shows attributes and methods with their visibility (+ and -), but no extensive associations:
+
+![Class Diagram 1](RESSOURCES/04-ClassA.png)
+
+**DISTINCTION: OPERATION AND METHOD**
+
+In UML 1, a strict distinction was made between an operation and a method – as an implementation of an operation. However, this is no longer the case since UML 2.
+
+![Class Diagram 2](RESSOURCES/04-ClassB.png)
+
+---
+
+## NOTATION
+
+The class itself is shown in a rectangle containing 1-3 areas. At the top is the class name, which is usually shown in bold. Below that are the attributes and then the methods. Class names are capitalized in almost all languages.
+
+> NOTICE: It makes sense to state the responsibility of classes as a comment, i.e. what the class itself is supposed to do, as long as this is not trivially evident from the class itself.
+
+
+Following are the attributes, which can be specified with or without parameters or visibility. Here, too, visibilities, types, parameters, assertions (constraints) or initial values are optional.
+
+Class attributes are represented in the same way and are unique to each class instance, i. H. all instances can access this attribute.
+
+![Class Elements](RESSOURCES/04-ClassC.jpg)
+
+Abstract classes can be marked/marked in both italics and bold. *{abstract}* is usually written under the class name.
+
+Usually the **visibilities** are *public +, protected #, private – and package ~*! These are noted with the given symbols in front.
+
+Derived attributes can be represented in the UML with a slash "/".
+
+**FIRST NAME, THEN TYPE!**
+
+It is interesting that – unlike in most programming languages – the name is displayed first and then the type. So don't get confused here.
+
+**An example:**
+
+    person: String = "Catherine"
+
+
+This also applies to the parameters of an operation / method! So is
+
+    getVAT (amount: integer)
+
+
+a valid specification for a method.
+
+---
+
+## INTERFACES
+
+As further awards for classes there are e.g. **enumerations** or int**erfaces. Enumerations are noted with \<\<enumeration\>\>. The enumeration sets (e.g. red, green, blue, etc.) can then be found in the body of the enumeration.
+
+Much more important are **interfaces**! Interfaces specify a **contract** to be implemented in the form of method specifications. They are noted with the \<\<interface\>\> keyword above the class name.
+
+![Interfaces](RESSOURCES/04-Interface.gif)
+
+Pic: An example interface
+
+It is said here that the trading module **realizes** or **implements** the interface that calculates the VAT.
+
+Attributes are not noted in interfaces (but it is not forbidden either), since it is about an access contract and not about the inner structure of the class.
+
+Since interfaces are strict contracts, you can find further specifications such as exceptions, invariants and pre- and post-conditions here.
+
+Another way of noting interfaces is to represent them as a sphere and a semicircle. The sphere implements the interface and the semicircle is the interface to which it is “docked” so to speak.
+
+![Interface Symbol](RESSOURCES/04-Interface-Ball.jpg)
+
+Pic: Interface as a speric and a half speric
+
+In addition, you can use one word to describe the semicircle, which property this class then implements (e.g. serializable or sortable).
+
+---
+
+## STEREOTYPES
+
+> **DEFINITION**: A stereotype is a consistent pattern that occurs or can be reused. The term actually comes from psychology and sociology and describes the same behavior of people or groups.
+
+Transferred to the UML and classes, this means that a class or other UML elements can be marked / classified with a stereotype. They thereby allow the use of platform- or domain-specific notation, effectively marking them as implementing a particular behavior.
+
+> **EXAMPLE**: For example `<<Stateless>>` for a stateless session bean.
+
+Since UML 2, classes can contain multiple stereotypes. Most UML tools allow stereotypes to be assigned directly to elements such as classes, dependencies, components or packages. Stereotypes are then often presented in the same colors.
+
+The UML already specifies a series of so-called "standard stereotypes" that are available to you for your modelling. Below are some of the relevant standard stereotypes:
+
+**Relevant standard stereotypes**
+
+* `<<focus>>` states that the classes so marked define the central logic or the central flow of control.
+* `<<auxiliary>>` typically implement secondary logic or control flow, thereby acting as a support for other classes that are central to the model.
+* `<<utility>>` define a collection of static attributes and class operations that can be accessed from all classes.
+* `<<create>>` can be one of two predefined stereotypes, one applicable to dependency relationships and one to operations.
+* `<<destroy>>` is the inverse of create and means that the operation destroys an instance of the classifier that contains it.
+* `<<call>>` indicates that a dependency relationship marked in this way has operations or classes with operations at its ends to which the association refers.
+* `<<instantiate>>` attached to a dependency relationship means that operations of the consumer create instances of the provider.
+* `<<interface>>` is an interface. No instances can be created from it, it contains no attributes and its operations cannot be implemented in methods.
+* `<<send>>` is applied to dependency relationships and indicates that the source of the relationship (an operation) sends a signal.
+* `<<type>>` is attached to a class, stating that that class groups a set of objects in terms of the operations that can be applied to those objects.
+* `<<responsibility>>` implies an obligation or contract between two model elements.
+
+---
+
+## ASSOTIATION
+
+The association describes a relationship between the classes in which one object uses the other.
+
+![Assotiation](RESSOURCES/04-Assotiation.jpg)
+
+**Pic**: Assotiation
+
+Here's an **example**: Let's assume a customer would be the class. Several invoices can be assigned to this class. The customer object must be able to access invoice objects.
+
+
+Aggregation and composition are special cases of association.
+
+The simple association is represented with a simple line.
+
+![Qualified Assotiation](RESSOURCES/04-Quali-Asso.jpg)
+
+**Pic**: Qualified Assotiation
+
+Important here are the multiplicities, which are used to indicate the number of times the two objects are linked to one another.
+
+> **Examples** are: **0..1, 0..42, 1..1, 1..42, 0..\*, 1..\***
+
+In Database E/R diagrams they are often referred to as **1:1, 1:N or N:M** relationships. In general, relations are important information when, for example, objects, database schemata or database mapping information are specified.
+
+Furthermore, associations can be qualified by marking the line with **roles** and pr**operties.
+
+Finally, there are multi-level associations, where multiple classes are linked. In this case, the lines converge into a small rhombus.
+
+**Directed Association**
+
+The directed association describes that you can get to the target class via the source class, but not vice versa. It is therefore a one-way relationship.
+
+![Directed Association](RESSOURCES/04-DirectedAsso.jpg)
+
+**Pic**: Directed Association
+
+If you want to be able to navigate in both directions – i.e. **bidirectionally** – then two arrows can be combined into one. These can then also be provided with roles and properties.
+
+**Aggregation**
+
+An aggregation is a special case of an association. It is called the **part-whole relationship**.
+
+![Aggregation](RESSOURCES/04-Assotiation.jpg.jpg)
+
+**Pic**: Aggregation
+
+Therefore, one often writes "consists of" as a property on the arrow.
+
+**EXAMPLE**: An example would be a "party" as a whole, made up of many participants. If the "party" and thus the aggregation are dissolved, the participants are still able to survive! You do not necessarily need the party, but the party only results from the aggregation of the party participants.
+
+If you are in doubt as to whether an aggregation is present, you can use an association without making a big mistake. However, a clear markup is always more legible and useful.
+
+**Composition**
+
+In contrast to aggregation, a composition is drawn with a filled diamond.
+
+![Composition](RESSOURCES/04-Komposition.jpg)
+
+**Pic**: Composition
+
+It is the strongest form of aggregation. The parts are dependent on the existence of the whole.
+
+**EXAMPLE**: The best-known example here is the invoice with its invoice items. If the invoice is deleted, the invoice items also cease to exist.
+
+It's different with an association (aggregation) to its members. When a club is deleted from the official register, the existing members want and can still live on :-)
+
+---
+
+## INHERITANCE / GENERALIZATION / SPECIALIZATION
 
