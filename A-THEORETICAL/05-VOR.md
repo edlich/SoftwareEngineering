@@ -803,7 +803,270 @@ and the 90+ (!) rules and tips for each phase of how to check the architecture. 
 
 ## SCRUM
 
-TEXT!
+**ORIGINS OF SCRUM**
+
+One of the best-known agile methods is Scrum, which was already developed back in the 1990s by KEN SCHWABER, JEFF SUTHERLAND and MIKE BEEDLE. It includes a simple process model, clearly defined roles and a simple set of rules that can be used not only to control large projects, but even to manage entire organizations. Many even huge German companies, including Xing AG, SAP AG and 1&1 Germany, are now successfully using Scrum since a very long time.
+
+**ALREADY KNOWN**
+
+SCRUM has a reputation for being a *“hyper”* productivity tool. Surprisingly, it was initially documented in the Harvard Business Review in **1986** (!) with the title *“The new product development game”*.
+
+**COMPARISON WITH RUGBY**
+
+They used the word Scrum from rugby to describe that product development is about collaboration between multiple disciplines. This image also represents the cohesion that a Scrum team can develop and only a few rules that are necessary for this. Similar to the rough sport of rugby, these should be adhered to and implemented precisely.
+
+**FRAMEWORK**
+
+The term was then expanded through various other publications, especially by KEN SCHWABER, JEFF SUTHERLAND and MIKE BEEDLE, as a framework for developing software and later further developed to organize entire companies and divisions.
+
+**Literature reference**
+
+![Scrum Book](RESSOURCES/05-ScrumBook.jpg)
+
+Schwaber, Ken (2004): Agile Project Management with SCRUM, Microsoft Press, 03/2004, ISBN 073561993X
+
+---
+
+### SCRUM – A PROCESS MODEL
+
+(by Ina Fischer)
+
+Scrum is a process model that focuses on the process flow and does not prescribe the use of special tools such as UML. Rather, Scrum defines the framework within which all product development activities take place. This includes various roles, which are explained below, as well as special meetings and artifacts, which are then explained in more detail in a brief description of the Scrum process flow.
+
+**The roles in Scrum**
+
+1. **Product Owner**
+
+The Product Owner is the customer's representative and manages the development requirements. In the end, he decides which functionalities should be developed.
+ 
+2. **Team**
+Depending on the size of the project, there are one or more development teams. The team consists of five to nine people, organizes itself and implements the development products.
+ 
+3. **Scrum Masters**
+In principle, the Scrum Master is not ranked higher than the team, but has the task of maintaining the values and rules of Scrum and removing obstacles in the process.
+ 
+4. **External roles**
+
+They are not part of the actual Scrum process, but they influence it, for example by commenting on the results in review meetings.
+
+* User
+* Buyers and/or sellers
+* Higher management
+
+---
+
+### THE SCRUM PROCESS – A BRIEF OVERVIEW
+
+**Product Backlog**
+
+At the beginning of the Scrum process there is the idea of a new product, which the so-called product owner has developed into a product vision. Alone or with the help of team members, he develops the product functionalities, which are referred to as **product backlog items**. All product backlog items are recorded in the so-called **product backlog**. Similar to a requirement specification, the product backlog represents the basis of the required performance.
+
+![Scrum Flow](RESSOURCES/05-ScrumFlow.png)
+
+**Pic**: Scrum Process Model
+
+**Effort estimation**
+
+For each **product backlog item**, the effort is estimated by the team members and the priority is determined by the order. There are different types of effort estimation - one of them, for example, is **Planning Poker**. In this variant, the effort is estimated by dividing it into effort categories, for example category 1 for “very low effort” and category 13 for “extremely high effort” and corresponding categories in between.
+
+After the product backlog is estimated, all team members have an idea of what the desired product should look like and the product owner has an initial estimate of the financial effort.
+
+|Priorität|Nr.|Beschreibung|Aufwandsschätzung|
+|--------|--------|--------|--------|
+|Sehr hoch|12|Bugfix: Speicherung der Adressdaten|2|
+| |15|Single-Sign-On|13|
+|Hoch|14|XML-Export der Kontaktdaten|1|
+| |7|Performancetuning|3|
+|Mittel|5|Setup erstellen|1|
+
+**Sprints**
+
+Once the project is approved, the development team begins its work. For this purpose, the entire project duration is divided into clearly defined time intervals, so-called **sprints**. Each sprint should last around two to four weeks - during this time the team has to develop its part of the product backlog into deliverable software, the so-called "**usable software**".
+
+**Sprint Planning Meeting 1: Sprint Goal**
+
+At the beginning of each sprint there is tactical planning, which is divided into two planning meetings. At the **Sprint Planning Meeting 1**, the product owner, the team, the management and the users of the product set the goals of the sprint, the **sprint goal**. You select the highest-priority product backlog items that can actually be delivered in the sprint. The sum of these agreed product backlog items is the **selected product backlog**.
+
+Sprint Planning Meeting 2: Tasks and implementation plan
+In the subsequent **Sprint Planning Meeting 2**, the team discusses the tasks resulting from the **Selected Product Backlog** and develops an implementation plan, the so-called **Sprint Backlog**, which contains concrete solution approaches and detailed tasks.
+
+**Daily Scrum Meeting**
+
+During the subsequent implementation of the Sprint Backlog, the team members coordinate their daily tasks with each other in a so-called **Daily Scrum**. The **Daily Scrum Meeting** is an informal meeting of **15** minutes maximum. At this meeting it will be announced:
+
+* What have I achieved since the last Daily Scrum?
+* What do I want to achieve by the next Daily Scrum?
+* What impediments (obstacles) are in my way?
+
+**BURNDOWN CHART**
+
+The burndown chart is also updated every day: Each team member estimates the remaining effort required for their tasks. This chart becomes more concrete from day to day and allows an analysis of progress for the current sprint.
+
+![Burndown Chart](RESSOURCES/05-BurndownChart.png)
+
+**Pic**: Burndown Chart
+
+**Preparation of the next sprints**
+
+During the sprint, the team members, together with the product owner, prepare the next sprints. The **Product Backlog** is updated and **estimates for new backlog items** are created and updated if necessary.
+
+**Sprint review**
+
+In the **sprint review**, progress is demonstrated at the end of the sprint using the usable software developed. This demonstration usually leads to new ideas and clearly shows the project progress. If the **functionality**, i.e. the functionality of the product, has progressed to such an extent that the product can be released for production, the corresponding measures are then carried out.
+
+**Sprint Retrospective**
+
+After the Sprint Review, the team conducts the **Sprint Retrospective**, in which the team members' approaches and problems are discussed in order to make them more efficient and pleasant in the following sprints.
+
+---
+
+### IMPLEMENTING SCRUM
+
+In order to get a better idea of how Scrum can be implemented, the requirements for the Scrum team are explained below and a selection of tools are presented.
+
+**Scrum values**
+
+Successfully applying Scrum is a learning process that requires self-organization, initiative and communication. The programming outsider (nerd), who only works through his set of tasks in a quiet room, is not in demand.
+
+Because a Scrum team is not just about delivering working code at the end, but a piece of product in its entirety. This requires multidisciplinarity and interdisciplinary work. Each team member should contribute their knowledge and creativity towards a common goal.
+
+**5 VALUES FOR COLLABORATION**
+
+KEN SCHWABER and MIKE BEEDLE have defined five values for their collaboration. These affect not only the development team, but everyone involved:
+
+**Obligation**
+
+The teams should say what they can deliver and deliver what they promised. [Glo08]
+ 
+**Focus**
+
+Scrum promotes and requires concentration on the essential tasks.
+ 
+**Openness**
+
+Scrum is intended to achieve transparency and practice knowledge management: everyone should pass on their knowledge instead of keeping it to themselves.
+ 
+**Respect**
+
+Communication and behavior between each other should be respectful.
+ 
+**Courage**
+
+Scrum not only supports, but also requires the courage to talk about problems and obstacles and to ask for or offer help.
+
+These values are the actual core of Scrum - they are the only things that make Scrum work. Actually and completely implementing it in a corporate culture requires a lot of time and patience and will certainly not work right away in the first sprint.
+
+Through a reflective way of working and, for example, exchanging experiences at the end of a sprint in the Sprint Retrospective, these values can be implemented step by step.
+
+---
+
+### SCRUM TOOLS
+
+**SUITABLE TOOLS**
+
+A suitable tool is essential so that everyone involved has an overview of the project. The first place in the visualization is the so-called taskboard, on which the backlog items are displayed. There are also other artifacts, such as the burndown chart or the impediment backlog, which are updated regularly.
+
+**TASK BOARD**
+
+The taskboard will now be presented in more detail below. This records the current processing status of all backlog items. The backlog items can be formulated in the form of user stories. This means that the software requirement is deliberately kept short and formulated in a maximum of two sentences. At the beginning, the user stories are divided into concrete activities, so-called tasks.
+
+**ALLOCATION OF TASKS**
+
+Over the course of the sprint, these tasks are then assigned to one of the three columns, depending on their processing status:
+
+* “**Not Done**” or “Not yet started”,
+* “**In Progress**” or “In Process” and
+* “**Done**” or “finished”.
+
+![Scrum Taskboard](RESSOURCES/05-ScrumTaskboard.png)
+Pic: Scrum Taskboard
+
+**VISUALIZATION**
+
+The simplest means of visualizing the taskboard are the pinboard, the whiteboard, the magnetic board or just a sheet of wrapping paper. For example, different priorities can be signaled with various colored pins, stickers or magnets.
+
+These boards are directly in sight of the Scrum Team and are updated every day after the Daily Scrum. For distributed teams, webcams can be used or photos can be sent after each daily scrum.
+
+**WIKIS, SPREADSHEET AND OTHER TOOLS**
+
+In addition, some companies use wikis or distribute the good old spreadsheet. In addition, there is now a very large selection of software tools, including many open source tools, which are, for example, web-based and are therefore also suitable for controlling (globally) distributed projects (see links in the appendix).
+
+---
+
+### EVALUATION OF SCRUM
+
+Scrum currently plays the leading role among agile methods - this can be justified by the success factors, some of which are even measurable, from which more and more companies want to benefit and are therefore introducing Scrum. Despite all this, there are critics who see the freedom of Scrum as a lack of guidelines and therefore view this approach as unsuitable for certain projects.
+
+**Success factors**
+
+If Scrum is implemented correctly, it can be of great benefit to a successful project:
+
+**Problems are identified early**
+
+The principle of time boxing, i.e. software development within a set period of time, achieves more efficiency in implementation: Requirements are implemented according to priority until the end of the time box is reached. At this point, problems in the development become apparent early on and there is an opportunity to develop options for solutions, take appropriate action, and steer the project in the right direction as it progresses.
+
+**Improving employee satisfaction**
+
+Active participation and self-organization increase employee satisfaction. Well-defined meetings such as the Sprint Retrospective promote collaboration within the team. In addition, the freedom to assess for yourself what work can be completed within a sprint and the work without external control leads to better motivation.
+
+This is how 52 percent of Scrum project employees at Yahoo! the question about improving team morale through Scrum was positive in a survey.
+
+**Increase productivity**
+
+By focusing on the most important requirements, increasing experience from sprint to sprint and avoiding undesirable developments through active participation, Scrum increases productivity. In addition, finished product parts are delivered with each sprint, which can be tested and integrated directly.
+
+At Yahoo! For example, an improvement in productivity of 68 percent was determined through the use of Scrum. 
+
+**Increasing customer satisfaction**
+
+Working closely with the customer in the role of product owner and involving them in requirements workshops and sprint reviews, for example, ensures that the resulting software meets customer needs.
+
+And although the requirements are not exactly specified at the beginning and the contracts with the customer therefore have to be designed more flexibly, for example in the form of project-related contracts, companies like Payback have even had good experiences with this. The likelihood that the scope of services predetermined in a waterfall project will actually work without improvements is very low anyway. 
+
+**CRITICISMS**
+
+**LACK OF REQUIREMENTS**
+
+Despite the success factors mentioned, there are critics who sometimes criticize exactly the points that are highly praised by others. The freedom of Scrum is seen as a disadvantage by those for whom the process model is not sufficient and who demand more details for planning and design or a clear development methodology. According to critics, the lack of these specifications means that Scrum is not suitable for large or distributed projects or for safety-critical projects.
+
+**MECHANISMS NOT SUFFICIENT**
+
+For larger projects, more formalized communication and coordination mechanisms beyond verbal exchange through meetings would be needed. In addition, additional planning mechanisms - not explicitly specified by Scrum - would be necessary for troubleshooting and maintaining existing software applications as well as the combination of support and new functions.
+
+**SECURITY**
+
+In addition, more formalities would also be necessary for safety-critical aspects so that architecture and design are not defined or improved by the team within each individual sprint. This would be too risky and ineffective and should instead be fixed across sprints in a binding document. 
+
+It is certainly clear that Scrum alone cannot be a guarantee for successful projects and that success depends heavily on the individual skills and motivations of everyone involved in the project. The self-responsible way of working cannot be implemented by everyone. Some people prefer to have guidelines about what they have to complete and by when. This can lead to conflicts and possibly result in employee turnover when Scrum is newly introduced.
+
+---
+
+### CONCLUSIONS ON SCRUM
+
+**SIMPLE PRINCIPLES AND FLEXIBILITY**
+
+In contrast to classic software development methods, Scrum contains simple principles and allows for a lot of flexibility in the development process. Thanks to its uncomplicated set of rules, it is possible for almost anyone to use this method - practical tools support the work.
+
+**LIVE VALUES**
+
+When used correctly, the values of agile software development can be lived in an excellent way. As a result, the use of Scrum, when applied correctly, can not only have a positive effect on collaboration with customers and measurably improve productivity, but can also have a particularly positive impact on employee satisfaction.
+
+**MOST POPULAR METHOD**
+
+So it is not surprising that Scrum has now become the most popular method in agile application development. Last year, market researcher Forrester found that a good third of almost 1,300 IT specialists surveyed now work with agile methods - one in ten companies uses Scrum. The reason given is the simplicity of this approach. Instead of a fixed way of working in a rigid process, the focus is on the results. The waterfall method, on the other hand, is only used in thirteen percent of companies.
+
+![Forrester Survey](RESSOURCES/05-ForresterUmfrage.jpg)
+Pic: Forrester survey from 2009: Which development method is closest to the one you use?
+(Taken from: [WG10])
+
+**JUST A FRAMEWORK**
+
+When deciding on Scrum, it should be borne in mind that this process model only represents a framework: it provides framework conditions in the form of a process that includes certain roles, artifacts and meetings. It also determines the rules for interpersonal interaction. What the players, i.e. those involved in the project, make of it depends on their individual knowledge, skills – and will. The discipline necessary to adhere to Scrum principles in daily work should not be underestimated. It requires time and patience. Openness, communication and personal responsibility are required. Everyone not only has the opportunity, but also has the obligation to participate intensively in the development process and to contribute as part of the bigger picture.
+
+**AVOID WATER SCRUM**
+
+Only by strictly adhering to the rules and avoiding “Water Scrum”, as Scrum’s founding father JEFF SUTHERLAND describes an intermediate between agile application development and the classic “Waterfall Model”, can Scrum achieve its full positive effect. [Time10]
+
 
 ## SUMMARY PROCESS MODELS
 
