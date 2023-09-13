@@ -370,34 +370,222 @@ Pic: Separate Ways
 
 Better term: **Internal low level Building Blocks** from the DDD perspective.
 
-> WEBSOURCE Good reference: http://vaadin.com/learn/tutorials/ddd/tactical_domain_driven_design
-
+> WEBSOURCE Good reference: https://vaadin.com/blog/ddd-part-2-tactical-domain-driven-design
 
 Patterns are considered here that can actually be used to build any system:
 
-Aggregates
-Entities
-Value Objects
+* **Aggregates**
+* **Entities**
+* **Value Objects**
+
 and the classics:
 
-Factories
-Services
-Repositories
+* Factories
+* Services
+* Repositories
 
-Entities
-For example, Customer (in a microservice-bound context)
+**Entities**
 
-Represents a core business object
-Every entity has a constant identity
-Has its own life cycle
+For example, *Customer* (in a microservice-bound context)
 
-Value Objects
-Example: €900
+* Represents a core business object
+* Every entity has a constant identity
+* Has its own life cycle
 
-Outside the context – if a specific customer is meant – then it is a value object.
+**Value Objects**
 
-It derives from his values. Always immutable.
-No lifecycle. They inherit from the entities they reference.
-Ideal for the domain model.
-Aggregates
+Example: *€900*
+
+Outside the context – if a specific customer is meant – then it should be a value object.
+
+* It derives from his values. Always immutable.
+* No lifecycle. They inherit from the entities they reference.
+* Ideal for the domain model.
+
+**Aggregates**
+
 Each Aggregate has a Root Entity (and N Value Objects). This is the only entry point.
+
+---
+
+## EVENT STORMING OOD
+
+> REFERENCES: [DDD Crew, EventStorming Glossary & Cheat Sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
+
+There are very different techniques to achieve a common understanding of user stories between developers and domain experts:
+
+* Event Storming
+* Domain storytelling
+* Example Mapping
+* User story mapping
+* etc.
+
+> WEBSOURCE: A very good overview of this can be found here: [Visual Collaboration Tools / Leanpub](https://leanpub.com/visualcollaborationtools) (You can set the price to €0, but every cent will be donated.)
+
+There is no specific DDD procedure. There is only an iterative approach domainlanguage.com/ddd/whirlpool/. This graphic was created by ERIC EVANS “out of anger” to express that there is nothing rigid here.
+
+![ModelExplo](RESSOURCES/07-ModelExplo.png)
+
+Pic: Model Exploration Whirlpool ((C) BY-SA Source: www.domainlanguage.com)
+
+> NOTICE: As preparation, it is worth reflecting on **Conways Law** again and researching it using a search engine / LLM!
+
+> Then it becomes clear that (as is unfortunately all too often the case in management) it is not about organizational structures, but rather that the **communication structures** are crucial in determining the structures! And not the other way around!
+
+---
+
+## EVENTSTORMING INITIAL SETUP
+
+Initial 2013 by *ALBERTO BRANDOLINI* (http://eventstorming.com/book & http://leanpub.com/introducing_eventstorming):
+
+1. large room + free wall, hotel conference rooms are ideal
+2. endless post-its and good pens (presentation case)
+3. people should stand
+4. ideal MIRO or www.mural.co (possibly also conceptboard are tools for this)
+
+**STARTING IDEA**:
+
+1. **Chaotic Exploration** (many more ideas, different languages also emerge!)
+2. then draw in a **timeline** (if necessary as a mob team)
+  * from the beginning in the timeline
+  * or even put the cart before the horse
+
+>WEBSOURCE: Tools
+* http://github.com/ddd-crew/eventstorming-glossary-cheat-sheet
+* http://eventnotes.io
+* generally http://github.com/ddd-crew
+
+The moderator doesn't do much initially. He may set the goals and play the **ICE breaker**.
+
+> NOTICE: It's also good not to have **any spectators**: e.g. B. no annoying management that sits in the back and that many people are afraid of. The atmosphere should be relaxed and at eye level.
+
+---
+
+## EVENTSTORMING CORE TECHNIQUES
+
+Initially we only use the two cards:
+
+* **Domain Event** (**Orange** & always in the **past tense**!)
+* **HotSpot** (Red, Conflict)
+
+The result of phase 1 could then look like this:
+
+![Storm1](RESSOURCES/07-Storm1.jpg)
+
+Pic: Event storming with (almost) only domain events
+
+The Event Storming subdivision options are as follows:
+
+![SubDiv](RESSOURCES/07-SubDiv.jpg)
+
+Pic: EV structuring © DDD Design Crew
+
+This means that it always makes sense to work with vertical pivotal events or with horizontal **swimlanes**, for example. These could also be **indicators for subdomains**! However, this should never be communicated that way initially, otherwise you start thinking technically too early.
+
+After structuring has been added, it can look like this:
+
+![Storm2](RESSOURCES/07-Storm2.jpg)
+
+Pic: Phase 2
+
+This means that you don't actually do anything other than what you do with a software architecture: **structure** the problem in order to understand it!
+
+> NOTICE: At this point you could also play a Problems & Opportunities game. This is an interesting approach to renew or transform things, especially with legacy systems!
+
+Then the following things could be added:
+
+* external systems (pink)
+* Actor (yellow)
+* Opportunities (green, problems = we already had hotspots...)
+
+> NOTICE: The result of event storming should not be overestimated! There are event storming trainers who throw away the result after the session. At least as important as the artifact is the shared understanding of the elements of the event storming result! The event storming result is difficult for outsiders to understand. Often it is not even referred to as an artifact - at most in connection with the overall documentation. Many even make an animated gif or film from the entire event storming session.
+
+You end up more likely to enter a phase called **Event Storming for Software Design**. Here we bring in:
+
+* Commands (blue) = Reaction “When the application is submitted, then...”
+* External Systems (purple)
+* Rules (yellow)
+* Read Model (green) [1] (towards event storming)
+
+---
+
+## CUTTING DOMAINS
+
+In the next phase you can cut domains and sub-domains.
+
+Here the granularities are usually not primarily important or clear anyway.
+
+> EXAMPLE: What is VW’s domain? ⇒ Automobile manufacturing? Mobility?
+
+> But VW also has the VW Bank, VW Insurance, ... and much more.
+
+![DDD_SubDo](RESSOURCES/07-DDD_SubDo.jpg)
+
+Pic: Find subdomains
+
+Further help if (sub)domains are clear:
+
+**DOMAIN STORYTELLING**
+
+> `ACTOR x ACTIVITY x WORK OBJECT`
+
+As in German: object, subject, predicate. Then you can draw graphs with arrows and insert other things.
+
+We differentiate between subdomains:
+
+* **Core** (sub)domain: the most important area, which is the core business and realizes the market advantage. What everyone actually wants to be. ⇒ If you want to do it yourself
+* **Supporting subdomain**: Important support for the core domain. No strategic competitive relevance.
+* **Generic domain**: Is needed, but is not critical. Part of solving a problem. ⇒ external solution / outsourcing?!
+
+Then it makes sense to **categorize all subdomains**:
+
+Categorization of sub-domains two-dimensionally according to **complexity** and spec**ialization:
+
+![Matrix](RESSOURCES/07-Matrix.jpg)
+
+Pic: Classification matrix
+
+As you can see, there are important domains that are part of the core business. There are *“semi-important”* domains and there are almost unimportant domains that don’t need to be developed yourself.
+
+>WEBSOURCE: Supporting materials can be found under **MIRO templates** on [Github](https://github.com/ddd-crew/virtual-modelling-templates/blob/master/resources/strategic-ddd-miro-template.png).
+
+> You can also find out more about this at http://blog.gardeviance.org/2015/02/an-introduction-to-wardley-value-chain.html with the interesting Wardley Maps.
+
+It is always important to check and iterate: technical **metrics** could be a tool to check cuts, contexts and domains.
+
+---
+
+## UNDERSTANDING BOUNDED CONTEXTS
+
+Invest the **Bounded Context Canvas** 
+
+> https://github.com/ddd-crew/bounded-context-canvas
+
+* here you can also create tests that cover the parts of the bounded content
+* and discuss policies again
+
+![BoundedContextCanvas](RESSOURCES/07-bounded-context-canvas-v5.jpg)
+
+Pic: Bounded Context Canvas
+
+---
+
+## EXERCISE
+
+> Task 1: Event Storming
+
+Carry out an event storming with the typical elements. Where do you see classic boundaries and “ubiquitous languages”? Do you carry out event storming until you can identify some clear domains and possibly also sub-domains?
+
+Processing time: 60 minutes
+
+> Task 2:  Core Domain Charts
+
+Classify the domains found into the core domain chart matrix. Briefly explain why some domains are clearly “core” and some are clearly “generic”.
+
+Processing time: 15 minutes
+
+Task 37: Domain relationships
+
+Draw all domains in a graphic and then draw all DDD relationships and name them. For each relationship, write a short explanation why one of the 9-12 domain mappings / relationships exists. (Here is another overview of the relationships: https://github.com/ddd-crew/context-mapping)
+
+Processing time: 20 minutes
