@@ -2,7 +2,7 @@
 All Software Engineering Courses in English from Stefan Edlich
 
 ## A: THEORETICAL BASICS
-**01-INTRO ✅ 02-REQ✅ 03-ANA ✅ 04-UML 05-VOR O6-OD 07-DDD** (PRO)
+**01-INTRO 02-REQ 03-ANA 04-UML 05-VOR O6-OD 07-DDD** (PRO)
 
 ## B: PRACTICAL BASICS
 **08-TEST** REFA BUI VER METR ARC EFF DEP
