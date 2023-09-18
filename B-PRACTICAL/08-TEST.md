@@ -633,6 +633,8 @@ The idea is to describe processes or formal specifications or the behavior of th
 
 Another important factor is that TDD with lots of good tests ensures that debugging is done much less often. Firstly, we simply have a lot more tests and secondly, it is **much easier to find errors** if you look at which methods have not been tested with which input!
 
+> Reference with LLMs: https://hackernoon.com/leveraging-chatgpt-for-software-testing
+
 ---
 
 ## SUMMARY
