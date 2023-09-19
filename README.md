@@ -10,6 +10,7 @@ All Software Engineering Courses in English from Stefan Edlich
 ## C: ADVANCED SWE
 CLEAN CICD AOP MICR FUNC LOG DSL
 
-* Markdown PDF v1.4.4 Chromium Install OK, Restart
+* **Markdown PDF v1.4.4 Chromium Install OK, Restart** F1 Markdown PDF: export
 * change all pictures
 * Start each chapter with an image
+* (Update VSC to 64 bit)
