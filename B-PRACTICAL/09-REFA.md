@@ -327,3 +327,366 @@ Pic: EclipseRefactoring.png
 ---
 
 ## REFACTORING PATTERNS
+
+In this chapter, some refactorings and some examples from the refactoring catalog are explained in order to gain a practical approach to the subject of refactoring.
+
+However, there is no substitute for experimenting yourself using your / the best IDE!
+
+---
+
+## EXTRACT METHOD
+
+Extract Method extracts smaller ones from a larger method. This has the effect of making the resulting code more readable and testable. But the other goals from the “ANA – Analysis” learning unit in the “Corporate Goals” chapter can also have a positive effect here.
+
+![ExtractMethod](RESSOURCES/09-ExtractMethod.gif)
+
+Pic: Extract Method Example
+
+**Calculating a mortgage**
+
+For example, if a mortgage is to be calculated in one method, the following tasks can also be carried out in one method:
+
+* Extract master data
+* Get loan amount, annual interest, repayment, special repayment
+* Calculate monthly rate
+* Calculate the term until it is fully repaid
+* Interest payments made during this period
+* Total expense for the loan
+* Create financial PDF for every single year
+
+However, it is immediately obvious that dividing it into smaller units makes sense:
+
+**Mortgage processing method**
+
+    ... getMaster Data(...)
+    ... addFinancialData(...)
+    ... calcMonthRare(...)
+    ... calcTimeToFinish(...)
+    ... calcInterest4Period(...)
+    ...calcTotalExpense(...)
+    ... createPDF4EachYear(...)
+
+Such a method should be much easier to read than in the case where the method does everything itself. And even if the methods shown here may be private to a class, they can easily be tested using suitable tools (see the learning unit “TEST – Object-Oriented Testing and Test-Driven Development” in the chapter “Test procedures for specific test levels”).
+
+For the sake of accuracy, it should be noted that the methods shown above may address different layers or areas of responsibility. This means that a refactoring is in order anyway, which might even extract classes here, e.g. B. I/O classes for data input and data output such as the PDF report!
+
+MARTIN FOWLER [Fo99] shows an even simpler example:
+
+**Source code before**
+
+    printOwing(double amount) {
+      printBanner();
+      //print details
+      System.out.println("name:" + _name);
+      System.out.println("name:" + _name);
+    }
+
+Source code later
+
+    printOwing(double amount) {
+      printBanner();
+      void printdetails(amount);
+    }
+
+Source code
+
+    void printDetails(double amount) {
+      System.out.println("name:" + _name);
+      System.out.println("name:" + _name);
+    }
+
+This example seems almost too trivial to be useful. Why should I put two ridiculous print commands into one method with extra effort? That even costs running time!
+
+Nevertheless, the example shows what is at stake. The source code becomes more readable afterwards. If additional output needs to be added, this can be done locally without affecting printOwing. PrintDetails can also be tested better with more complex methods. You can printDetails e.g. B. also provided with aspects.
+
+If you think about it longer, you will find further advantages.
+
+For all these reasons, **Extract Method** is certainly one of the most important refactorings supported by any IDE (that deserves the name IDE).
+
+**IMPORTANT**: However, caution is advised for several reasons:
+
+* What happens to method local variables that are contained in the code segment that you have marked in the IDE? This problem is also recognized and described by Martin Fowler.
+
+**Solution**: These may have to be passed as parameters. This is easy if these variables are only used for reading purposes. It becomes more difficult if these are also changed! Then you would have to submit the results again. Here you have to take a close look to see whether you are entering into a “battle” with variables that could possibly be lost. It's still good that IDEs can also provide support in defining the variables!
+
+* Even more annoying are code sections that e.g. B. encapsulate a return in an if (there are weaknesses in FOWLER here that he himself doesn't mention). A refactoring would completely distort the meaning here, even if all variables were handled correctly! Where should the submethod jump to? Back into the main method? That wasn't the point. An annoying solution here might just be to put the call to the submethod via a bool into an if with return. But maybe there are even better solution suggestions from you!
+Fortunately, most IDEs warn in advance - here Eclipse 3.1.
+
+![EclipseWarning](RESSOURCES/09-EclipseWarning.png)
+
+Pic: Warning notice in Eclipse
+
+---
+
+## INLINE METHOD
+
+> DEFINITION: The inline method is the inverse operation of the extract method. In certain cases, the overhead of a method call is not appropriate for readability reasons. In this case, the contents of the method are integrated back into its call. In almost all cases, the reason for calling inline is not performance but rather readability.
+
+**Source code before**
+
+    1 int getRating() {
+    2 return ( moreThanFiveLateDeliveries() ) ? 2:1;
+    3 }
+    4
+    5 boolean moreThanFiveDeliveries()
+    6 return _numberOfLateDeliveries > 5;
+    7 }
+
+**Source code later**
+
+    1 int getRating() {
+    2 return (_numberOfLateDeliveries > 5) ? 2:1;
+    3 }
+
+As you can see, the `moreThanFiveLateDeliveries` method does not provide any added value because it basically just encapsulates a member variable that has the same name.
+
+The inline refactoring itself cannot only be applied to methods. There are two other applications listed in the refactoring catalog:
+
+**Inline Temp** eliminates a (possibly even previously) temporary variable and replaces it with its assignment:
+    double basePrice = anOrder.basePrice();
+    return (basePrice > 1000)
+
+Then it becomes easy:
+
+    return (anOrder.basePrice() > 1000)
+
+Obviously, not much changes here in terms of readability, testability, refactorability, etc.
+
+**Inline Class** merges a – possibly – unnecessary class with another class.
+
+![Inline](RESSOURCES/09-Inline1.gif)
+
+Pic: ClassPerson
+
+becomes
+
+![Inline2](RESSOURCES/09-Inline2.gif)
+
+Pic: Inline class
+
+This refactoring is more commonly seen after modeling class diagrams when modeling without attributes and methods. Many classes are then so “thin” that they can be integrated into other classes.
+
+---
+
+## TRIVIAL REFACTORINGS
+
+The following refactorings are not particularly architecturally demanding, but are still extremely important.
+
+**Undo**:
+It sounds incredible, but the UnDo function should also be able to undo the last refactoring. Can your IDE do this?
+
+> Question: 
+Why is UnDo also a refactoring and why is it so important?
+
+**Answer**: In the literature, UnDo is sometimes included as a refactoring pattern, although it may not be one. It's just a function or a type of pattern to transactionally process all last actions and undo them if necessary.
+
+UnDo is important because there are some refactorings that affect a lot of code and files. The author knows of examples (e.g. with a simple rename of a class method (which is again a dubious refactoring)) where hundreds of code passages and dozens of files are changed. But if you made mistakes during this refactoring or the refactoring is unfavorable, then It is virtually impossible to "undo" by "manually". Here you need an undo. If this is missing, then hopefully a good version management system was used regularly (see the learning unit "DVC - Version and Error Management"), which provides a secure base.
+
+**Redo**:
+
+It was determined that deleting the UnDo of the last refactoring was a mistake and that the refactoring is needed and would now like to have it back.
+
+**Rename**:
+
+Renaming classes, methods, attributes, etc. is also part of the Refatoring catalog and probably the most used. The point here is that renaming cannot be done “by hand” or at the file system level. It starts with the similarity of file and class names within Java, which therefore needs to be taken into account. But since a method can be referenced (or will be, according to Murphy) hundreds of times elsewhere, no one wants to change this by hand. Here everyone is grateful for the machine (=IDE) that takes on this Sisyphean task.
+
+**Move**:
+
+Moving classes (between packages), methods, attributes, etc. is not always easy to do by hand, which is why all good IDEs support this process.
+
+**Change method signature**:
+This refactoring changes the method signature in the definition and in all calls.
+
+---
+
+## EXTRACT INTERFACE
+
+> DEFINITION => Extract interface: Creates an interface from the current class. Furthermore, the original class is changed so that this class now implements this newly created interface.
+
+**IMPORTANT**: It is also important here to change all references! This is actually the most important task of this refactoring. All classes that previously referenced the class now implement against interfaces, which usually makes a lot of sense.
+
+Unfortunately, many IDEs have different behavior here: Eclipse, for example, does not include the existing method signatures in the interface. This is actually what you want and you don't want to do it by hand. A default and then deleting methods might be easier.
+
+The refactoring catalog also has an extract package http://www.refactoring.com.
+
+> GERARD M. DAVIDSON writes: “A package either has too many classes to be understandable or it smells confusing / mixed up”
+
+Everyone has probably seen the “smells” when browsing packages: as e.g. java.io with 83 classes in old Java 1.5 times...
+
+--- 
+
+## MORE REFACTORINGS
+
+**Pull Up/Push Down**
+
+Moves fields and methods between class and superclass.
+
+This refactoring is applicable to one or more elements.
+
+> NOTICE: In almost all IDEs, the variables have to be marked correctly with the mouse, otherwise this refactoring cannot be carried out properly automatically.
+
+**EXAMPLE**
+
+Super class money
+
+In a well-known example by KENT BECK [BK03], the classes Dollar and Franc are enriched by a super class Money. Then it is clear that duplicate methods such as the well-known equals() must be raised to eliminate duplicates.
+
+![PullUp](RESSOURCES/09-PullUp.gif)
+
+Pic: Pull up
+
+**Encapsulate Field**
+
+Sets the visibility of an attribute to private and adds getter and setter.
+
+A refactoring feature that has long been known from UML modeling tools, but is very useful in an IDE.
+
+> **EXAMPLE**: Notification when a class changes
+
+In an application, a field was previously public. Now other classes should be notified when this class changes:
+
+    public void setNice(int nice) {
+      System.out.println("What's interesting is: " + nice);
+      this.nice = nice;
+    
+    // Make "nice" known (java.util.Observable)
+      setChanged();
+      notifyObservers();
+    }
+
+**Convert Local Variable to Field**
+
+Elevates a local variable to the status of a class variable.
+
+This is often the case when the content of this variable can be usefully used in other methods. A practical example has already been shown in Extract Method.
+
+![ConvertField](RESSOURCES/09-ConvertField.gif)
+
+Pic: Convert Field
+
+---
+
+## WEAK REFACTORINGS
+
+Before we finally look at two classic refactoring examples, here are two less important refactorings that are more reminiscent of source code changes. Therefore, these refactorings are more likely to be found in IDEs and less in the “holy” refactoring catalogs.
+
+What is interesting is that the refactoring **spectrum** ranges from small source code manipulation to complex refactorings, such as “weaving” design patterns into an existing architecture.
+
+**Introduce parameters**
+
+An expression is replaced by a parameter. All other methods calling this method are modified to include the expression 22*getTickRate() as a parameter.
+
+    public int experience() {
+      int a = 22*getTickRate();
+      return processTickRate(a);
+    }
+The replacement in the source method is then:
+
+    public int experience(int magicNumber) {
+      int a = magicNumber;
+      return processTickRate(a);
+    }
+
+A calling method
+
+    private void doSomething(){experience();}
+
+would then too
+
+    private void doSomething(){experience(22*getTickRate());}
+
+be changed, i.e. H. the expression would be passed itself. This refactoring is also used here to increase readability.
+
+**Extract Local Variable**
+
+If the expression is not intended to be a parameter, but simply a local variable, this refactoring helps. It is very reminiscent of Extract Variable http://www.refactoring.com from MARTIN FOWLER's pattern catalog.
+
+Source code before
+
+    if ( (platform.toUpperCase().indexOf("MAC") > -1) &&
+      (browser.toUpperCase().indexOf("IE") > -1) &&
+      wasInitialized() && resize > 0 )
+    { // do something
+    }
+becomes:
+
+Source code later
+
+    final boolean isMacOs = platform.toUpperCase().indexOf("MAC") > -1;
+    final boolean isIEBrowser = browser.toUpperCase().indexOf("IE") > -1;
+    final boolean wasResized = resize > 0;
+    if (isMacOs && isIEBrowser && wasInitialized() && wasResized) {
+      // do something
+    }
+
+Again, the code becomes more readable because most code readers will only read the line in the if and will simply “believe” the definitions.
+
+**Extract Constant**
+
+Here a local constant is turned into a class attribute, which can optionally also be declared as static final (e.g. for pi).
+
+**Use Supertype where Possible**
+
+Helps when trying to use the superclass type instead of a type. This can always be useful, especially when exploiting polymorphism properties.
+
+---
+
+## ARCHITECTURE REFACTORINGS AND EXPLANATORY REFACTORINGS
+
+A large part of the refactorings in the catalog are architecture refactorings, which usually change or move class structures or parts of class diagrams.
+
+**Architecture refactoring example**
+
+A classic example is Collapse Hierarchy and is similar to the inline class refactoring from Eclipse discussed at the beginning. Here the superclass and the subclass do not show much difference and are small enough to merge.
+
+![Collapse](RESSOURCES/09-Collapse.gif)
+
+Pic: Collapse Hierarchy
+
+And so perhaps the Salesman lives on only as an attribute in Employee.
+
+However, a lot of refactorings are explanatory. While on the previous pages z. For example, once an explanatory temporary local variable has been introduced, one might as well introduce an explanatory method. So e.g. B. Decompose Conditional
+
+    if (date.before (SUMMER_START) || date.after(SUMMER_END))
+      charge = quantity * _winterRate + _winterServiceCharge;
+    else charge = quantity * _summerRate;
+
+becomes
+
+    if (notSummer(date))
+      batch = winterCharge(quantity);
+    else charge = summerCharge(quantity);
+
+This is not an extract method because no existing pieces of code can be excised, but it appears to be similar because of explanatory replacement and simplification.
+
+---
+
+## CONCLUSION
+
+* Refactoring patterns have now become an important and indispensable tool in software development. This is especially true for all cycles similar to TDD (Test Driven Development). Refactoring is also an integral part of XP and all agile software engineering methods in order to get closer to the final goal as quickly as possible with an early prototype.
+
+* With today's extreme cost pressure, it is therefore imperative to be able to adapt quickly and change the code or its architecture.
+
+> **IMPORTANT** It is important not to use refactoring blindly, but to constantly think about its success or performance: Does the refactoring reach all documents? Do they achieve descriptors? All XML files? What happens if I rename an important method, but unfortunately it is referenced via JNDI in the ejb-jar.xml? So it's a question of the scope of the refactoring!
+
+Such cases are particularly bad because they may only be detected late in integration tests and are therefore particularly expensive! Therefore, all files that are not in the source tree or JavaDocs or other meta information must be taken into account.
+
+Fortunately, most refactorings in small projects are relatively harmless and only have local effects.
+
+Thanks to modern IDEs, many complex refactorings have now been demystified. So it's always worth looking into the IDE's refactoring features.
+
+![Road ends](RESSOURCES/09-RoadEnds.jpg)
+
+---
+
+## EXERCISE
+
+> Check out all the refactorings of Martin Fowler's catalog: http://www.refactoring.com/catalog
+
+* Play with some of the Fowler refactorings and try them out documented in the IDE.
+
+* Write something very briefly about A) 1-2 refactorings that particularly impressed you and B) about one that you think is unnecessary and C) one that you didn't understand! (this refers to the Fowler catalog)
+
+* Create at least one non-trivial code example of your own that shows the “before and after” state.
+
+Processing time: 40 minutes
