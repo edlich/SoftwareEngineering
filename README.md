@@ -11,6 +11,5 @@ All Software Engineering Courses in English from Stefan Edlich
 CLEAN CICD AOP MICR FUNC LOG DSL
 
 * **Markdown PDF v1.4.4 Chromium Install OK, Restart** F1 Markdown PDF: export
-* change all pictures
-* Start each chapter with an image
-* (Update VSC to 64 bit)
+* Many pics must be converted to English
+* The ANT SubChapter is missing.
