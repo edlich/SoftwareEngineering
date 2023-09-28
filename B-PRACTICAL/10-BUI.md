@@ -540,3 +540,403 @@ However, the future lies in other systems such as “Google Bazle” or “Faceb
 
 Please take a look and try to understand these concepts too.
 
+## 14 ANT CHAPTERS HERE (TODO)
+
+14 Ant Chapters are waiting to be inserted here.
+
+## MAVEN PRACTICE
+
+**Install and run Maven**
+
+Of course, Maven requires Java. There should be at least a 1.5 installation ;-)
+
+Test the installation:
+
+    C:\Users\Edlich> java -version
+    java version "1.7.0_03"
+    Java(TM) SE runtime environment (Build 1.7.0_03-b05)
+    Java HotSpot(TM) 64-Bit Server VM (build 22.1-b02, mixed mode)
+    C:\Users\Edlich>
+    
+Downloading the Maven version (checking for the correct version) is done from this address:
+
+http://maven.apache.org/download.html
+
+The installation details for all operating systems are easy to google.
+The package is unpacked and then the correct paths are set.
+
+**For Windows:**
+
+    CODE
+    F:\CODING> set M2_HOME=F:\PROGRAMS\apache-maven-3.0.4
+    F:\CODING> set PATH=%PATH%;%M2_HOME%\bin
+
+Then Maven should be good to go.
+
+Test:
+    
+    Apache Maven 3.0.4 (r1232337; 2012-01-17 09:44:56+0100)
+    Maven home: F:\PROGRAMS\apache-maven-3.0.4
+    Java version: 1.7.0_03, vendor: Oracle Corporation
+    Java home: C:\Program Files\Java\jdk1.7.0_03\jre
+    Default locale: de_DE, platform encoding: Cp1252
+    OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
+
+Now you can generate an archetype when connected to the internet!
+
+    F:\CODING> mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+Now Maven will download countless libraries, which may take a few minutes.
+
+One suspects that Maven is a frequent point of criticism here: Maven takes forever to load something from the internet and can sometimes “hang” when resources are not available. Here you have to help a little in order to run Maven in offline mode.
+
+The following structure is then created:
+
+BUI Maven-Struct.gif
+
+![MavenStructure](RESSOURCES/10-MavenStructure.gif)
+
+PIC: File structure
+
+A Java template is also created:
+
+![Template](RESSOURCES/10-Maven2.gif)
+
+Pic: Java template
+
+A corresponding test file is also created.
+
+Now you can just go with it
+
+    > mvn compile // (approx. 32 sec)
+    > mvn package // (approx. 29 sec)
+
+compile and create a jar. A target directory is created that contains the classes and other folders.
+
+The whole thing can then be carried out:
+
+    F:\CODING\my-app\target>java -cp my-app-1.0-SNAPSHOT.jar
+    de.vfh.vfhvws.maveme.App
+    Hello World!
+    F:\CODING\my-app\target>
+
+Finally, you can clean up with the following line:
+
+    > mvn clean
+
+The target directory is then deleted.
+
+---
+
+## MAVEN QUICK-REFERNCE
+
+**WEBSOURCE**
+
+* Maven: The complete Reference http://de.sonatype.com/resources/ebooks
+* E-Book: Better Builds with Maven http://de.scribd.com/document/238927/Better-Builds-With-Maven
+* Video-Tutorial Maven http://youtube.com/watch?v=al7bRZzz4oU
+
+... end endless more references on the internet.
+
+---
+
+## GRADLE PRACTICE
+
+Gradle “up and away”
+
+The first step is to make sure that Java is installed and can be found in the path.
+
+After downloading `gradle-VERSION-all.zip` from http://www.gradle.org, Gradle must be unpacked.
+
+Then GRADLE_HOME/bin needs to be added to the PATH environment variable. (There are path editors for Windows such as those on softpedia.com)
+
+If PATH has been expanded accordingly, it is necessary to test whether the installation was successful and Gradle is found:
+
+    F:\CODING>gradle -v
+    -------------------------------------------------- ----------
+    
+    
+    Gradle 1.0-rc-1
+    -------------------------------------------------- ----------
+    Gradle build time: Wednesday April 11, 2012 11:13 am UTC
+    Groovy: 1.8.6
+    Ant: Apache Ant(TM) version 1.8.2 compiled on December 20 2010
+    Ivy: 2.2.0
+    JVM: 1.7.0_03 (Oracle Corporation 22.1-b02)
+    OS: Windows 7 6.1 amd64
+
+In contrast to Ant, Gradle only knows projects and tasks, but not the term “targets”, which correspond to the Gradle tasks.
+
+Now let's edit a "Hello World":
+
+    1 File name: build.gradle
+    2
+    3 task hello { // task
+    4   doLast {
+    5     println 'Hello SWT master!'
+    6   }
+    7 }
+
+build.gradle is the file name analogous to Ant's build.xml.
+
+We run this with gradle hello or with `gradle -q` hello.
+`-q` (quiet) suppresses Gradle's system messages.
+
+---
+
+## GRADLE QUICK REFERENCE
+
+Source: (C) Gradle User Guide
+
+**Simplest definition**
+    
+    1 task hello << {
+    2 println 'Hello world!'}
+
+The println is added dynamically here with the following code:
+
+    1 hello.doFirst { // add
+    2 prints 'Hello Venus'}
+    3 hello.doLast { // add
+    4 println 'Hello Mars'}
+    5 hello << { // add
+    6 println 'Hello Jupiter'}
+
+would yield
+
+    Hello Venus,
+    Hello world!,
+    Hello Mars
+
+and in the end 
+
+   Hello Jupiter
+
+will be executed.
+
+**List of all tasks**
+
+You can get a list of all self-defined (and built-in) tasks by calling gradle tasks.
+
+Example:
+
+    F:\CODING\GrTest>gradle tasks
+    :tasks
+    
+    -------------------------------------------------- ----------
+    All tasks runnable from root project
+    -------------------------------------------------- ----------
+    
+    Help tasks
+    ----------
+    
+    dependencies - Displays the dependencies of root project 'GrTest'.
+    help - Displays a help message
+    projects - Displays the sub-projects of root project 'GrTest'.
+    properties - Displays the properties of root project 'GrTest'.
+    tasks - Displays the tasks runnable from rot project 'GrTest' (some of the displayed tasks may belong to subprojects).
+    
+    Other tasks
+    
+    -----------
+    copyfile
+    delfile
+    
+    To see all tasks and more detail, run with --all.
+    
+    BUILD SUCCESSFUL
+    
+    Total time: 2,574 seconds
+    F:\CODING\GrTest>
+
+
+**Use Groovy code**
+
+    1 task upper << {
+    2   String someString = 'mY_nAmE'
+    3   println "Original: " + someString
+    4   println "Upper case: " + someString.toUpperCase()
+    5 }
+    1 task count << {
+    2   4.times { print "$it " }
+    3 }
+
+Obviously all variables can be defined somewhere and reused. This would have killed global and local properties. System and command line properties are covered later.
+
+**Dependencies**
+
+    1 task hello << {
+    2 println 'Hello world!'}
+    3 task intro(dependsOn: hello) << {
+    4 println "I'm Gradle"}
+
+**Dynamic tasks**
+
+    1 4.times { counter ->
+    2 task "task$counter" << {
+    3 println "I'm task number $counter" }
+    4 }
+
+Is called with:
+
+    > gradle -q task1 // or task0, task2, task 3, but not task 4 !
+
+Tasks can be created **at runtime**!
+
+**Each task is an object and has additional properties!**
+
+Task properties can be accessed as follows:
+
+    1 task hello << {
+    2 println 'Hello SWT!'}
+    1 hello.ext.taste = "Banana" // my properties
+    2 hello.doLast {
+    3 println "Greetings from the $hello.name task with flavor $hello.ext.taste."}
+
+**Ant integration**
+
+Ant is wonderfully integrated. All tasks are easily available. Here are two examples:
+
+The Ant task Loadfile loads a file. Ant often has characteristics in this. But it could also be anything else. We read the file and output the file name and content:
+
+    1 task loadfile << {
+    2   def file = file('Textfile.txt')
+    3   ant.loadfile(srcFile: file, property: file.name)
+    4   println "Filename = $file"
+    5   println "Properties = ${ant.properties[file.name]}"}
+
+What is interesting here?
+
+We call the Ant Task with `ant.open`. The parameter attributes are present with colons. For example srcFile:: and after that comes the value. Just like in the Ant documentation.
+
+Now something new. E.g. copy:
+
+    1 task copyfile << {
+    2   ant.copy(file: 'Textfile.txt', tofile: 'IchKopie.txt')
+    3   println "Done!"
+    4 }
+    5
+    6 task delfile << {
+    7   ant.delete(file: 'IchKopie.txt')
+    8   println 'IchKopie.txt killed'
+    9 }
+
+So if the file actually exists, it can be copied using gradle copyfile and deleted using gradle delfile.
+
+Interestingly, you can define the file in tofile value in different ways:
+
+    tofile: tofile // with def tofile = file('ICopy.txt')
+    tofile: tofile.name // with the definition above
+    tofile: 'ICopy.txt'
+
+**More power through methods**
+
+    1 task methoddemo << {
+    2   println "Result: " + doubleMe("Cream")}
+    3
+    4   String doubleMe(String arg) {
+    5   arg + "+" + arg
+    6 }
+
+So I can use any method anywhere in any task.
+
+**Default tasks**
+
+How to define default tasks:
+
+    1 defaultTasks 'clean', 'run'
+    2
+    3 task clean << {
+    4 println 'Default Cleaning!' // will run}
+    5
+    6 task run << {
+    7 println 'Default Running!' // will run}
+    8th
+    9 tasks other << {
+    10 println "I'm not a default task!" // wants to cry}
+
+**Gradle GUI**
+    > gradle --gui
+
+Features:
+
+    Tree view
+    Launcher
+    Favorites (for long build files)
+    Pass parameters
+    Browse new build files, log levels, filters, etc.
+
+**Eclipse**
+
+Unfortunately there doesn't seem to be a nice Eclipse plugin. Or? So you can only use GUI or Gradle as external tools under Eclipse: Weblink: Run Gradle from Eclipse.
+
+In this configuration, the task is passed via prompt. A tree view is not available in Eclipse, but it could be.
+
+But IntelliJ and VSCode Idea may have had Gradle support well before 2017.
+
+---
+
+## ADVANTAGES AND DISADVANTAGES OF THESE SYSTEMS
+
+It's time to look at the pros and cons of the new systems:
+
+**Maven**:
++ If you don't deviate from the standard, your life is easy
++ Good ecosystem
++ At least two free books
+- Reading and understanding XML POMs is no fun
+- Expressiveness only via XML parameters
+- Better with the internet running (even if it goes offline...)
+
+**Gradle**:
++ Very expressive language
++ Great docs
++ Many additional features (Deamons, GUI, parallel, dynamic tasks, etc.) + At least 5 books
+
+- Weak Eclipse integration (2013)
+
+In one sentence: (and strikingly simplified)
+
+* XML haters will be happy with Gradle.
+* XML lovers will feel at home in Maven.
+
+And of course it makes sense to deal with the specific build systems of a language if you stay completely in that language.
+
+---
+
+## SUMMARY
+
+* The importance of the build management process in connection with continuous integration and what types of builds exist were shown.
+* The term configuration management and the build management history as well as common tools on the market were introduced.
+* The important basic terms of Ant, such as Target, Tasks, Dependencies, have been defined. You should be able to create Ant scripts yourself. The IDE integration and property handling were covered.
+* You should know the most important tasks for build management and the importance of patterns and filesets.
+* Advanced concepts such as build number assignment, structuring with Ant or Include or parallel execution under Ant are no longer foreign to you.
+* You should have the necessary tools to create your own tasks.
+* You have received a brief overview of the history of build management and know the basic principles of build management systems.
+* You got to know Ant, Maven and Gradle in practical exercises.
+* You now know the advantages and disadvantages of all systems.
+
+> NOTICE: You have reached the end of this learning unit.
+
+---
+
+## EXERCISES
+
+
+Gain experience with **two** (!) build management systems:
+
+1. In Ant you build tasks like: `CLEAN, GET, COMPILE, JAR, TEST, RUN, DOC`
+
+First build the skeleton with dependencies and echos. Some tasks like compile, test or doc often mess around. The compile task, for example, needs the compiler. But he doesn't know it. Therefore you have to give the Ant environment the lib rt.jar in the environment!
+
+2. Maven
+
+3. Gradle
+
+or any other general purpose build management system (for your language).
+
+No pure package or deployment managers! They are often too special.
+
+> Show how you got your scripts **running**, what the **outputs** are and what **experiences** you have had! I am not interested in internet `copy & paste` or `LLM` output! Please take this issue serious!
+
+Processing time: 60 minutes
