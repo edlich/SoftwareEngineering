@@ -661,10 +661,10 @@ Software engineering can be divided into five categories: methods, tools, measur
 ## Excercises
 
 1. Your friend asks you "what is software engineering?" Can you define that in a few sentences?
-2. Why is software quality so important? (a few sentences)
-3. What is software quality for you? (a few sentences)
-4. What are the three biggest problems for you, why software projects go wrong. How would you address these? (>= 9 sentences)
-5. Could you now write / draw the phases of the software life cycle on the blackboard? Please memorize and test yourself by noting all phases here.
-6. What relation do you have to software engineering? Which areas are you particularly interested in? Do some research and send 2-3 links!
+2. Why is software quality so important?  What is software quality for you? (a few sentences)
+3. What are the three biggest problems for you, why software projects go wrong. How would you address these? (>= 9 sentences)
+4. Could you now write / draw the phases of the software life cycle on the blackboard?
+5. What relation do you have to software engineering? Which areas are you particularly interested in? Do some research and send 2 links!
+6. What do they think: how will AI / LLMs impact software engineering?
 
 Processing time: 30 minutes
