@@ -1,3 +1,7 @@
+# Typical Software Engineering Assignment
+
+(no warranty to be identical to the Moodle assignment)
+
 **A)** Write a **small pet project** to get into coding again. You might want to use a language like Python which is also good for this Master! The code can be relatively simple (e.g. simple game with console output). This doc can be very short! (in contrast to the one below)
 
 B) Make sure each person has applied the following **Software Engineering** topics on the code which have been taught in the lecture:
